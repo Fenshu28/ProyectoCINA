@@ -10,7 +10,8 @@ uses
   athreads,
   {$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, uLogin
+  Forms, uLogin, uPrincipal, uNutriologos, uPacientes, uAgregarPaciente, 
+uAgregarNutriologo
   { you can add units after this };
 
 {$R *.res}
@@ -19,7 +20,12 @@ begin
   RequireDerivedFormResource:=True;
   Application.Scaled:=True;
   Application.Initialize;
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TMenuPrincipal, MenuPrincipal);
+  Application.CreateForm(TFrmMenuPrincipal, FrmMenuPrincipal);
+  Application.CreateForm(TfrmNutriologos, frmNutriologos);
+  Application.CreateForm(TfrmPacientes, frmPacientes);
+  Application.CreateForm(TfrmAgregarPacientes, frmAgregarPacientes);
+  Application.CreateForm(TfrmAgregarNutriologo, frmAgregarNutriologo);
   Application.Run;
 end.
 

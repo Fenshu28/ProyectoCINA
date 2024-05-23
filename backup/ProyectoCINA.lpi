@@ -35,10 +35,52 @@
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="unit1.pas"/>
+        <Filename Value="ulogin.pas"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="Form1"/>
+        <ComponentName Value="MenuPrincipal"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uLogin"/>
+      </Unit>
+      <Unit>
+        <Filename Value="uprincipal.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmMenuPrincipal"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uPrincipal"/>
+      </Unit>
+      <Unit>
+        <Filename Value="unutriologos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmNutriologos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uNutriologos"/>
+      </Unit>
+      <Unit>
+        <Filename Value="upacientes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmPacientes"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uPacientes"/>
+      </Unit>
+      <Unit>
+        <Filename Value="uagregarpaciente.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmAgregarPacientes"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uAgregarPaciente"/>
+      </Unit>
+      <Unit>
+        <Filename Value="uagregarnutriologo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmAgregarNutriologo"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uAgregarNutriologo"/>
       </Unit>
     </Units>
   </ProjectOptions>
@@ -53,6 +95,9 @@
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Linking>
+      <Debugging>
+        <DebugInfoType Value="dsDwarf3"/>
+      </Debugging>
       <Options>
         <Win32>
           <GraphicApplication Value="True"/>

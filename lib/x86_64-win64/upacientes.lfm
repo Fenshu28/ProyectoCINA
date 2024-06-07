@@ -1,219 +1,328 @@
 object frmPacientes: TfrmPacientes
-  Left = 887
-  Height = 628
-  Top = 200
-  Width = 800
-  Caption = 'PACIENTES'
-  ClientHeight = 628
-  ClientWidth = 800
+  Left = 534
+  Height = 750
+  Top = 152
+  Width = 994
+  Caption = 'frmPacientes'
+  ClientHeight = 750
+  ClientWidth = 994
+  DesignTimePPI = 120
+  OnClose = FormClose
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  Position = poDesktopCenter
   LCLVersion = '3.2.0.0'
-  object Panel1: TPanel
-    Left = 0
-    Height = 45
-    Top = 0
-    Width = 800
-    ClientHeight = 45
-    ClientWidth = 800
+  object Button1: TButton
+    Left = 1009
+    Height = 0
+    Top = 748
+    Width = 21
+    Caption = 'Button1'
     TabOrder = 0
-    object Button1: TButton
-      Left = -8
-      Height = 45
-      Top = 0
-      Width = 168
-      Caption = 'CONSULTA'
-      Color = 6184737
-      TabOrder = 0
-    end
-    object Button2: TButton
-      Left = 152
-      Height = 45
-      Top = 0
-      Width = 168
-      Caption = 'NUTRIOLOGOS'
-      TabOrder = 1
-    end
-    object Button3: TButton
-      Left = 312
-      Height = 45
-      Top = 0
-      Width = 168
-      Caption = 'PACIENTES'
-      TabOrder = 2
-    end
-    object Button4: TButton
-      Left = 472
-      Height = 45
-      Top = 0
-      Width = 168
-      Caption = 'ESTADISTICAS'
-      TabOrder = 3
-    end
-    object Button5: TButton
-      Left = 638
-      Height = 45
-      Top = 0
-      Width = 160
-      Caption = 'AGENDA'
-      TabOrder = 4
-    end
   end
-  object Button6: TButton
-    Left = 48
-    Height = 25
-    Top = 144
-    Width = 79
-    Caption = 'BUSCAR'
-    Color = clGreen
+  object btnSalir: TButton
+    Left = 690
+    Height = 31
+    Top = 610
+    Width = 94
+    Caption = 'Salir'
     TabOrder = 1
-    OnClick = Button6Click
+    OnClick = btnSalirClick
   end
-  object Button7: TButton
-    Left = 257
-    Height = 25
-    Top = 136
-    Width = 79
-    Caption = 'AGREGAR'
-    Font.CharSet = ANSI_CHARSET
-    Font.Height = -13
-    Font.Name = 'Tahoma'
-    Font.Pitch = fpVariable
-    Font.Quality = fqDraft
-    Font.Style = [fsBold]
-    ParentFont = False
+  object Label2: TLabel
+    Left = 234
+    Height = 20
+    Top = 232
+    Width = 58
+    Caption = 'Nombre:'
+    Color = clNavy
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 232
+    Height = 20
+    Top = 306
+    Width = 166
+    Caption = 'FechaNac (dia/mes/año):'
+    Color = clNavy
+    ParentColor = False
+  end
+  object Label14: TLabel
+    Left = 234
+    Height = 20
+    Top = 376
+    Width = 61
+    Caption = 'Teléfono:'
+    Color = clNavy
+    ParentColor = False
+  end
+  object Label5: TLabel
+    Left = 232
+    Height = 20
+    Top = 448
+    Width = 66
+    Caption = 'Dirección:'
+    Color = clNavy
+    ParentColor = False
+  end
+  object lblConectar: TLabel
+    Left = 550
+    Height = 20
+    Top = 610
+    Width = 86
+    Caption = 'Sin Conexion'
+  end
+  object eDBNombre: TDBEdit
+    Left = 232
+    Height = 28
+    Top = 256
+    Width = 380
+    Color = clInactiveCaption
+    MaxLength = 0
     TabOrder = 2
-    OnClick = Button7Click
   end
-  object Button8: TButton
-    Left = 426
-    Height = 25
-    Top = 136
-    Width = 79
-    Caption = 'EDITAR'
-    Font.CharSet = ANSI_CHARSET
-    Font.Height = -13
-    Font.Name = 'Tahoma'
-    Font.Pitch = fpVariable
-    Font.Quality = fqDraft
-    Font.Style = [fsBold]
-    ParentFont = False
+  object eDBFechaNac: TDBEdit
+    Left = 234
+    Height = 28
+    Top = 328
+    Width = 380
+    Color = clInactiveCaption
+    MaxLength = 0
     TabOrder = 3
   end
-  object Button9: TButton
-    Left = 620
-    Height = 25
-    Top = 136
-    Width = 79
-    Caption = 'ELIMINAR'
+  object eDBDireccion: TDBEdit
+    Left = 232
+    Height = 28
+    Top = 472
+    Width = 380
+    Color = clInactiveCaption
+    MaxLength = 0
+    TabOrder = 4
+  end
+  object eDBTelefono: TDBEdit
+    Left = 232
+    Height = 28
+    Top = 400
+    Width = 380
+    Color = clInactiveCaption
+    MaxLength = 0
+    TabOrder = 5
+  end
+  object btnAltas: TButton
+    Left = 160
+    Height = 31
+    Top = 152
+    Width = 94
+    Caption = 'Altas'
+    Color = clNavy
+    TabOrder = 6
+    OnClick = btnAltasClick
+  end
+  object btnEliminar: TButton
+    Left = 584
+    Height = 31
+    Top = 152
+    Width = 94
+    Caption = 'Eliminar'
+    Color = clNavy
+    TabOrder = 7
+    OnClick = btnEliminarClick
+  end
+  object btnModificar: TButton
+    Left = 296
+    Height = 31
+    Top = 152
+    Width = 94
+    Caption = 'Modificar'
+    Color = clNavy
+    TabOrder = 8
+    OnClick = btnModificarClick
+  end
+  object btnBuscar: TButton
+    Left = 432
+    Height = 31
+    Top = 152
+    Width = 94
+    Caption = 'Buscar'
+    Color = clNavy
+    TabOrder = 9
+    OnClick = btnBuscarClick
+  end
+  object btnExportar: TButton
+    Left = 728
+    Height = 40
+    Top = 216
+    Width = 90
+    Caption = 'Exportar'
+    Color = clNavy
+    TabOrder = 10
+    OnClick = btnExportarClick
+  end
+  object PRPage1: TPRPage
+    Left = 72
+    Height = 750
+    Top = 656
+    Width = 750
+    MarginTop = 32
+    MarginLeft = 32
+    MarginRight = 32
+    MarginBottom = 32
+    Visible = False
+    object panelReport: TPRLayoutPanel
+      Left = 33
+      Height = 684
+      Top = 33
+      Width = 684
+      Align = alClient
+      object PRLabel1: TPRLabel
+        Left = 14
+        Height = 38
+        Top = 46
+        Width = 451
+        FontName = fnArial
+        FontSize = 28
+        Caption = 'LISTA DE PACIENTES'
+        Alignment = taCenter
+      end
+      object PRLabel2: TPRLabel
+        Left = 40
+        Height = 38
+        Top = 100
+        Width = 125
+        FontName = fnArial
+        FontSize = 13
+        Caption = 'Nombre'
+      end
+      object PRLabel3: TPRLabel
+        Left = 160
+        Height = 38
+        Top = 100
+        Width = 125
+        FontName = fnArial
+        FontSize = 13
+        Caption = 'FechaNac'
+      end
+      object PRLabel4: TPRLabel
+        Left = 294
+        Height = 38
+        Top = 100
+        Width = 66
+        FontName = fnArial
+        FontSize = 13
+        Caption = 'Teléfono'
+      end
+      object PRLabel5: TPRLabel
+        Left = 424
+        Height = 38
+        Top = 100
+        Width = 54
+        FontName = fnArial
+        FontSize = 13
+        Caption = 'Direccion'
+      end
+      object PRRect1: TPRRect
+        Left = 10
+        Height = 26
+        Top = 100
+        Width = 536
+        LineColor = clNavy
+        LineStyle = psinsideFrame
+      end
+    end
+    object Button2: TButton
+      Left = 523
+      Height = 148
+      Top = 301
+      Width = 11
+      Caption = 'Button2'
+      TabOrder = 1
+    end
+  end
+  object btnPrimero: TButton
+    Left = 96
+    Height = 31
+    Top = 552
+    Width = 160
+    Caption = 'Primer paciente'
+    Color = clNavy
+    TabOrder = 12
+  end
+  object btnAnterior: TButton
+    Left = 272
+    Height = 31
+    Top = 552
+    Width = 94
+    Caption = 'Anterior'
+    Color = clNavy
+    TabOrder = 13
+  end
+  object btnSiguiente: TButton
+    Left = 382
+    Height = 31
+    Top = 552
+    Width = 94
+    Caption = 'Siguiente'
+    Color = clNavy
+    TabOrder = 14
+  end
+  object btnUltimo: TButton
+    Left = 492
+    Height = 31
+    Top = 552
+    Width = 152
+    Caption = 'Ultimo Paciente'
+    Color = clNavy
+    TabOrder = 15
+  end
+  object Panel2: TPanel
+    Left = -14
+    Height = 75
+    Top = 0
+    Width = 1008
+    Caption = 'PACIENTES'
+    Color = 6382365
     Font.CharSet = ANSI_CHARSET
-    Font.Height = -13
-    Font.Name = 'Tahoma'
+    Font.Height = -50
+    Font.Name = 'Impact'
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
     Font.Style = [fsBold]
-    ParentFont = False
-    TabOrder = 4
-  end
-  object lstOpinion: TListView
-    Left = 96
-    Height = 312
-    Top = 240
-    Width = 592
-    Columns = <    
-      item
-        Width = 10
-      end    
-      item
-        Caption = 'Nombre'
-        Width = 150
-      end    
-      item
-        Caption = 'Apellidos'
-        Width = 150
-      end    
-      item
-        Caption = 'Edad'
-        Width = 140
-      end    
-      item
-        Caption = 'Teléfono'
-        Width = 70
-      end    
-      item
-        Caption = 'CURP'
-      end>
-    GridLines = True
-    Items.LazData = {
-      640300001D000000FFFFFFFFFFFFFFFFFFFFFFFF0000000009000000456C656D
-      656E746F30FFFFFFFFFFFFFFFFFFFFFFFF0000000009000000456C656D656E74
-      6F31FFFFFFFFFFFFFFFFFFFFFFFF0000000009000000456C656D656E746F32FF
-      FFFFFFFFFFFFFFFFFFFFFF0000000009000000456C656D656E746F33FFFFFFFF
-      FFFFFFFFFFFFFFFF0000000009000000456C656D656E746F34FFFFFFFFFFFFFF
-      FFFFFFFFFF0000000009000000456C656D656E746F35FFFFFFFFFFFFFFFFFFFF
-      FFFF0000000009000000456C656D656E746F36FFFFFFFFFFFFFFFFFFFFFFFF00
-      00000009000000456C656D656E746F37FFFFFFFFFFFFFFFFFFFFFFFF00000000
-      09000000456C656D656E746F38FFFFFFFFFFFFFFFFFFFFFFFF00000000090000
-      00456C656D656E746F39FFFFFFFFFFFFFFFFFFFFFFFF000000000A000000456C
-      656D656E746F3130FFFFFFFFFFFFFFFFFFFFFFFF000000000A000000456C656D
-      656E746F3131FFFFFFFFFFFFFFFFFFFFFFFF000000000A000000456C656D656E
-      746F3132FFFFFFFFFFFFFFFFFFFFFFFF000000000A000000456C656D656E746F
-      3133FFFFFFFFFFFFFFFFFFFFFFFF000000000A000000456C656D656E746F3134
-      FFFFFFFFFFFFFFFFFFFFFFFF000000000A000000456C656D656E746F3135FFFF
-      FFFFFFFFFFFFFFFFFFFF000000000A000000456C656D656E746F3136FFFFFFFF
-      FFFFFFFFFFFFFFFF000000000A000000456C656D656E746F3137FFFFFFFFFFFF
-      FFFFFFFFFFFF000000000A000000456C656D656E746F3138FFFFFFFFFFFFFFFF
-      FFFFFFFF000000000A000000456C656D656E746F3139FFFFFFFFFFFFFFFFFFFF
-      FFFF000000000A000000456C656D656E746F3230FFFFFFFFFFFFFFFFFFFFFFFF
-      000000000A000000456C656D656E746F3231FFFFFFFFFFFFFFFFFFFFFFFF0000
-      00000A000000456C656D656E746F3232FFFFFFFFFFFFFFFFFFFFFFFF00000000
-      0A000000456C656D656E746F3233FFFFFFFFFFFFFFFFFFFFFFFF000000000A00
-      0000456C656D656E746F3234FFFFFFFFFFFFFFFFFFFFFFFF000000000A000000
-      456C656D656E746F3235FFFFFFFFFFFFFFFFFFFFFFFF000000000A000000456C
-      656D656E746F3236FFFFFFFFFFFFFFFFFFFFFFFF000000000A000000456C656D
-      656E746F3237FFFFFFFFFFFFFFFFFFFFFFFF000000000A000000456C656D656E
-      746F3238
-    }
-    ReadOnly = True
-    RowSelect = True
-    TabOrder = 5
-    ViewStyle = vsReport
-  end
-  object Label1: TLabel
-    Left = 272
-    Height = 32
-    Top = 64
-    Width = 150
-    Caption = 'PACIENTES'
-    Color = 8404992
-    Font.CharSet = ANSI_CHARSET
-    Font.Height = -27
-    Font.Name = 'Showcard Gothic'
-    Font.Pitch = fpVariable
-    Font.Quality = fqDraft
+    ParentBackground = False
     ParentColor = False
     ParentFont = False
+    TabOrder = 16
   end
-  object Button10: TButton
-    Left = 720
-    Height = 25
-    Top = 552
-    Width = 75
-    Caption = 'Salir'
-    TabOrder = 6
-    OnClick = Button10Click
+  object Connection: TMySQL80Connection
+    Connected = False
+    LoginPrompt = False
+    KeepConnection = False
+    SkipLibraryVersionCheck = False
+    Left = 870
+    Top = 580
   end
-  object ButtonPanel1: TButtonPanel
-    Left = 6
-    Height = 34
-    Top = 588
-    Width = 788
-    OKButton.Name = 'OKButton'
-    OKButton.DefaultCaption = True
-    HelpButton.Name = 'HelpButton'
-    HelpButton.DefaultCaption = True
-    CloseButton.Name = 'CloseButton'
-    CloseButton.DefaultCaption = True
-    CancelButton.Name = 'CancelButton'
-    CancelButton.DefaultCaption = True
-    TabOrder = 7
+  object Transacion: TSQLTransaction
+    Active = False
+    Left = 860
+    Top = 660
+  end
+  object DataSource1: TDataSource
+    DataSet = Query
+    Left = 870
+    Top = 490
+  end
+  object Query: TSQLQuery
+    FieldDefs = <>
+    Params = <>
+    Macros = <>
+    Left = 870
+    Top = 400
+  end
+  object impresora: TPReport
+    FileName = 'default.pdf'
+    CreationDate = 45402.8013989352
+    UseOutlines = False
+    ViewerPreference = []
+    Left = 930
+    Top = 650
   end
 end

@@ -1,0 +1,159 @@
+%PDF-1.2 
+1 0 obj
+<<
+/Type /Catalog
+/Pages 3 0 R
+/PageMode /UseNone
+/PageLayout /SinglePage
+>>
+endobj
+2 0 obj
+<<
+/Producer (PowerPdf version 0.9)
+/Author ()
+/CreationDate (D:20240603103811)
+/Creator ()
+/Keywords ()
+/Subject ()
+/Title ()
+/ModDate (D:20240603103812)
+>>
+endobj
+3 0 obj
+<<
+/Type /Pages
+/Kids [4 0 R ]
+/Count 1
+>>
+endobj
+4 0 obj
+<<
+/Type /Page
+/Parent 3 0 R
+/MediaBox [0 0 750 750 ]
+/Resources <<
+/Font <<
+/F0 6 0 R
+>>
+/XObject <<
+>>
+/ProcSet [/PDF /Text /ImageC ]
+>>
+/Contents 5 0 R
+>>
+endobj
+5 0 obj
+<<
+/Length 659
+/Filter []
+>>
+stream
+/F0 10 Tf
+/F0 28 Tf
+0 0 1 rg
+BT
+195 647.2 Td
+(REPORTES) Tj
+ET
+/F0 13 Tf
+0 0 0.5 rg
+BT
+73 605.95 Td
+(Nombre) Tj
+ET
+0 0 0.5 rg
+BT
+193 605.95 Td
+(Apellido) Tj
+ET
+0 0 0.5 rg
+BT
+327 605.95 Td
+(Email) Tj
+ET
+0 0 0.5 rg
+BT
+457 605.95 Td
+(Edad) Tj
+ET
+[] 0 d
+43 617 m
+578 617 l
+578 592 l
+43 592 l
+0 0 0.5 RG
+0 w
+s
+/F0 12 Tf
+0 0 0 rg
+BT
+73 546.8 Td
+(Arely) Tj
+ET
+0 0 0 rg
+BT
+225 546.8 Td
+(02/11/2003) Tj
+ET
+0 0 0 rg
+BT
+541 546.8 Td
+(9512571353) Tj
+ET
+0 0 0 rg
+BT
+385 546.8 Td
+(La charca) Tj
+ET
+0 0 0 rg
+BT
+73 506.8 Td
+(Arely) Tj
+ET
+0 0 0 rg
+BT
+225 506.8 Td
+(07/11/2033) Tj
+ET
+0 0 0 rg
+BT
+541 506.8 Td
+(937816381) Tj
+ET
+0 0 0 rg
+BT
+385 506.8 Td
+(Colonia la charca) Tj
+ET
+
+endstream
+endobj
+6 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+/BaseFont /Helvetica
+/Name /F0
+>>
+endobj
+xref
+0 7
+0000000000 65535 f
+0000000011 00000 n
+0000000111 00000 n
+0000000296 00000 n
+0000000361 00000 n
+0000000550 00000 n
+0000001279 00000 n
+trailer
+<<
+/Size 7
+/Root 1 0 R
+/Info 2 0 R
+>>
+startxref
+1425
+%%EOF

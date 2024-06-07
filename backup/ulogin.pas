@@ -1,20 +1,20 @@
-unit uLogin;
+unit ulogin;
 
-{$mode objfpc}{$H+}
+{$mode ObjFPC}{$H+}
 
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,uPrincipal;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls,uPacientes,uNutriologos,uhome,uNutriologos1;
 
 type
 
-  { TMenuPrincipal }
+  { TLogin }
 
-  TMenuPrincipal = class(TForm)
+  TLogin = class(TForm)
     Button1: TButton;
-    eUsuario: TEdit;
     eContrasena: TEdit;
+    eUsuario: TEdit;
     Image1: TImage;
     Label1: TLabel;
     Label2: TLabel;
@@ -22,7 +22,6 @@ type
     Panel1: TPanel;
     procedure Button1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure Image1Click(Sender: TObject);
   private
 
   public
@@ -30,29 +29,27 @@ type
   end;
 
 var
-  MenuPrincipal: TMenuPrincipal;
+  Login: TLogin;
 
 implementation
 
 {$R *.lfm}
 
-{ TMenuPrincipal }
+{ TLogin }
 
-procedure TMenuPrincipal.FormCreate(Sender: TObject);
+procedure TLogin.Button1Click(Sender: TObject);
 begin
-  // Cargar la imagen desde un archivo en la misma carpeta que el proyecto
-  Image1.Picture.LoadFromFile('logouni.png');
+   //form1.ShowModal;
+  frmHome.ShowModal;
+
 end;
 
-procedure TMenuPrincipal.Button1Click(Sender: TObject);
+procedure TLogin.FormCreate(Sender: TObject);
 begin
-  frmMenuPrincipal.ShowModal;
+   Image1.Picture.LoadFromFile('C:\Users\Shell\Desktop\ProyectoCINA2.0\imgs\logouni.png');
 end;
 
-procedure TMenuPrincipal.Image1Click(Sender: TObject);
-begin
 
-end;
 
 end.
 

@@ -1,0 +1,292 @@
+object Form2: TForm2
+  Left = 543
+  Height = 682
+  Top = 195
+  Width = 997
+  Caption = 'Form2'
+  ClientHeight = 682
+  ClientWidth = 997
+  DesignTimePPI = 120
+  LCLVersion = '3.2.0.0'
+  object btnSalir: TButton
+    Left = 690
+    Height = 31
+    Top = 610
+    Width = 94
+    Caption = 'Salir'
+    TabOrder = 0
+  end
+  object Label2: TLabel
+    Left = 90
+    Height = 20
+    Top = 250
+    Width = 58
+    Caption = 'Nombre:'
+    Color = clNavy
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 90
+    Height = 20
+    Top = 290
+    Width = 166
+    Caption = 'FechaNac (dia/mes/año):'
+    Color = clNavy
+    ParentColor = False
+  end
+  object Label14: TLabel
+    Left = 90
+    Height = 20
+    Top = 344
+    Width = 61
+    Caption = 'Teléfono:'
+    Color = clNavy
+    ParentColor = False
+  end
+  object Label5: TLabel
+    Left = 90
+    Height = 20
+    Top = 380
+    Width = 66
+    Caption = 'Dirección:'
+    Color = clNavy
+    ParentColor = False
+  end
+  object lblConectar: TLabel
+    Left = 550
+    Height = 20
+    Top = 610
+    Width = 86
+    Caption = 'Sin Conexion'
+  end
+  object eDBNombre: TDBEdit
+    Left = 264
+    Height = 28
+    Top = 240
+    Width = 376
+    Color = clInactiveCaption
+    MaxLength = 0
+    TabOrder = 1
+  end
+  object eDBFechaNac: TDBEdit
+    Left = 264
+    Height = 28
+    Top = 282
+    Width = 380
+    Color = clInactiveCaption
+    MaxLength = 0
+    TabOrder = 2
+  end
+  object eDBDireccion: TDBEdit
+    Left = 264
+    Height = 28
+    Top = 372
+    Width = 376
+    Color = clInactiveCaption
+    MaxLength = 0
+    TabOrder = 3
+  end
+  object eDBTelefono: TDBEdit
+    Left = 264
+    Height = 28
+    Top = 328
+    Width = 380
+    Color = clInactiveCaption
+    MaxLength = 0
+    TabOrder = 4
+  end
+  object btnAltas: TButton
+    Left = 114
+    Height = 31
+    Top = 150
+    Width = 94
+    Caption = 'Altas'
+    Color = clNavy
+    TabOrder = 5
+  end
+  object btnEliminar: TButton
+    Left = 544
+    Height = 31
+    Top = 150
+    Width = 94
+    Caption = 'Eliminar'
+    Color = clNavy
+    TabOrder = 6
+  end
+  object btnModificar: TButton
+    Left = 264
+    Height = 31
+    Top = 150
+    Width = 94
+    Caption = 'Modificar'
+    Color = clNavy
+    TabOrder = 7
+  end
+  object btnBuscar: TButton
+    Left = 404
+    Height = 31
+    Top = 150
+    Width = 94
+    Caption = 'Buscar'
+    Color = clNavy
+    TabOrder = 8
+  end
+  object btnExportar: TButton
+    Left = 700
+    Height = 40
+    Top = 230
+    Width = 90
+    Caption = 'Exportar'
+    Color = clNavy
+    TabOrder = 9
+  end
+  object PRPage1: TPRPage
+    Left = 40
+    Height = 750
+    Top = 648
+    Width = 750
+    MarginTop = 32
+    MarginLeft = 32
+    MarginRight = 32
+    MarginBottom = 32
+    Visible = False
+    object panelReport: TPRLayoutPanel
+      Left = 33
+      Height = 684
+      Top = 33
+      Width = 684
+      Align = alClient
+      object PRLabel1: TPRLabel
+        Left = 14
+        Height = 38
+        Top = 46
+        Width = 451
+        FontName = fnArial
+        FontSize = 28
+        Caption = 'LISTA DE PACIENTES'
+        Alignment = taCenter
+      end
+      object PRLabel2: TPRLabel
+        Left = 40
+        Height = 38
+        Top = 100
+        Width = 125
+        FontName = fnArial
+        FontSize = 13
+        Caption = 'Nombre'
+      end
+      object PRLabel3: TPRLabel
+        Left = 160
+        Height = 38
+        Top = 100
+        Width = 125
+        FontName = fnArial
+        FontSize = 13
+        Caption = 'FechaNac'
+      end
+      object PRLabel4: TPRLabel
+        Left = 294
+        Height = 38
+        Top = 100
+        Width = 66
+        FontName = fnArial
+        FontSize = 13
+        Caption = 'Teléfono'
+      end
+      object PRLabel5: TPRLabel
+        Left = 424
+        Height = 38
+        Top = 100
+        Width = 54
+        FontName = fnArial
+        FontSize = 13
+        Caption = 'Direccion'
+      end
+      object PRRect1: TPRRect
+        Left = 10
+        Height = 26
+        Top = 100
+        Width = 536
+        LineColor = clNavy
+        LineStyle = psinsideFrame
+      end
+    end
+    object Button2: TButton
+      Left = 523
+      Height = 148
+      Top = 301
+      Width = 11
+      Caption = 'Button2'
+      TabOrder = 1
+    end
+  end
+  object btnPrimero: TButton
+    Left = 88
+    Height = 31
+    Top = 460
+    Width = 160
+    Caption = 'Primer paciente'
+    Color = clNavy
+    TabOrder = 11
+  end
+  object btnAnterior: TButton
+    Left = 264
+    Height = 31
+    Top = 460
+    Width = 94
+    Caption = 'Anterior'
+    Color = clNavy
+    TabOrder = 12
+  end
+  object btnSiguiente: TButton
+    Left = 374
+    Height = 31
+    Top = 460
+    Width = 94
+    Caption = 'Siguiente'
+    Color = clNavy
+    TabOrder = 13
+  end
+  object btnUltimo: TButton
+    Left = 484
+    Height = 31
+    Top = 460
+    Width = 152
+    Caption = 'Ultimo Paciente'
+    Color = clNavy
+    TabOrder = 14
+  end
+  object Connection: TMySQL80Connection
+    Connected = False
+    LoginPrompt = False
+    KeepConnection = False
+    SkipLibraryVersionCheck = False
+    Left = 864
+    Top = 552
+  end
+  object Transacion: TSQLTransaction
+    Active = False
+    Left = 872
+    Top = 632
+  end
+  object DataSource1: TDataSource
+    DataSet = Query
+    Left = 864
+    Top = 376
+  end
+  object Query: TSQLQuery
+    FieldDefs = <>
+    Params = <>
+    Macros = <>
+    Left = 864
+    Top = 288
+  end
+  object impresora: TPReport
+    FileName = 'default.pdf'
+    CreationDate = 45402.8013989352
+    UseOutlines = False
+    ViewerPreference = []
+    Left = 864
+    Top = 472
+  end
+end

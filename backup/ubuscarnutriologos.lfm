@@ -6,6 +6,7 @@ object frmBuscarNutriologos: TfrmBuscarNutriologos
   Caption = 'Buscar'
   ClientHeight = 594
   ClientWidth = 770
+  Color = clSilver
   DesignTimePPI = 120
   OnCreate = FormCreate
   OnHide = FormHide

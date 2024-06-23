@@ -332,6 +332,7 @@ object frmPacientes: TfrmPacientes
     ParentColor = False
     ParentFont = False
     TabOrder = 12
+    OnClick = Panel4Click
   end
   object Connection: TMySQL80Connection
     Connected = False

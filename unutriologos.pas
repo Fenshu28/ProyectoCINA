@@ -244,7 +244,7 @@ begin
 
   Query.DataBase:=Connection;
   Query.UsePrimaryKeyAsKey:=False;
-  Query.SQL.Text:='Select * from Nutriologo5';
+  Query.SQL.Text:='Select * from nutriologo';
   DataSource1.DataSet:=Query;
   if Connection.Connected then
   begin
@@ -288,7 +288,7 @@ begin
   Connection.HostName:='localhost';
   Connection.Password:='root';
   Connection.Port:=3306;
-  Connection.DatabaseName:='ProgramacionVisual';
+  Connection.DatabaseName:='sacc';
   Connection.UserName:='root';
   Connection.Connected:=True;
   Connection.KeepConnection:=True;

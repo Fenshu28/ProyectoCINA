@@ -246,7 +246,7 @@ begin
   Connection.HostName:='localhost';
   Connection.Password:='root';
   Connection.Port:=3306;
-  Connection.DatabaseName:='ProgramacionVisual';
+  Connection.DatabaseName:='sacc';
   Connection.UserName:='root';
   Connection.Connected:=True;
   Connection.KeepConnection:=True;

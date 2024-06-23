@@ -123,25 +123,45 @@ end;
 
 procedure TfrmConsultorios.AltasClick(Sender: TObject);
 var
- numReg:Integer;
+  numReg: Integer;
 begin
-   if Altas.Caption='Altas' then
-   begin
-     numReg:=obNumero;
-     Query.Open;
-     Query.Insert;
-     Altas.Caption:='Guardar';
-     Exit
+  if Altas.Caption = 'Altas' then
+  begin
+    // Validación de campos
+    if (Trim(eDBNombreAula.Text) = '') or (Length(eDBNombreAula.Text) > 100) then
+    begin
+      ShowMessage('Por favor ingrese un nombre de aula válido (máx. 100 caracteres).');
+      Exit;
+    end;
 
-   end
-   else
-   begin
-     Query.Post;
-     Query.ApplyUpdates;
-     Altas.Caption:='Altas';
-     Query.Refresh;
-     nRegistros;
-   end;
+    if (Trim(eDBUbicacion.Text) = '') or (Length(eDBUbicacion.Text) > 100) then
+    begin
+      ShowMessage('Por favor ingrese una ubicación válida (máx. 100 caracteres).');
+      Exit;
+    end;
+
+    if (Trim(eDBNota.Text) = '') or (Length(eDBNota.Text) > 255) then
+    begin
+      ShowMessage('Por favor ingrese una nota válida (máx. 255 caracteres).');
+      Exit;
+    end;
+
+    numReg := obNumero;
+    Query.Open;
+    Query.Insert;
+    Query.FieldByName('nombreAula').AsString := eDBNombreAula.Text;
+    Query.FieldByName('ubicacion').AsString := eDBUbicacion.Text;
+    Query.FieldByName('nota').AsString := eDBNota.Text;
+    Altas.Caption := 'Guardar';
+  end
+  else
+  begin
+    Query.Post;
+    Query.ApplyUpdates;
+    Altas.Caption := 'Altas';
+    Query.Refresh;
+    nRegistros;
+  end;
 
 end;
 

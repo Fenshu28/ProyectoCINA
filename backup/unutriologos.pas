@@ -456,15 +456,15 @@ procedure TfrmNutriologos.eDBMatriculaChange(Sender: TObject);
   matricula: string;
   i: Integer;
 begin
-  // Obtener el contenido actual del campo matrícula
+
   matricula := eDBMatricula.Text;
 
-  // Verificar si todos los caracteres son dígitos
+
   for i := 1 to Length(matricula) do
   begin
     if not (matricula[i] in ['0'..'9']) then
     begin
-      // Mostrar un mensaje de advertencia y salir del procedimiento
+
       ShowMessage('La matrícula solo puede contener números.');
       Exit;
     end;

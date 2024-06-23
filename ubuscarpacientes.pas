@@ -49,7 +49,7 @@ begin
    Conexion.HostName:='localhost';
   Conexion.Password := 'root';
   Conexion.Port := 3306;
-  Conexion.DatabaseName := 'ProgramacionVisual';
+  Conexion.DatabaseName := 'sacc';
   Conexion.UserName := 'root';
   Conexion.Connected := True;
   Conexion.KeepConnection := True;

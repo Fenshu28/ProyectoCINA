@@ -44,7 +44,7 @@ var
   i : integer;
 begin
   Conexion.Connected := true;
-  Query.SQL.Text := 'Select * from Nutriologo5 where matricula = "' + txtMatricula.Text + '"';
+  Query.SQL.Text := 'Select * from nutriologo where matricula = "' + txtMatricula.Text + '"';
   Query.Open;
   Query.First;
 
@@ -67,7 +67,7 @@ begin
   Conexion.HostName:='localhost';
   Conexion.Password := 'root';
   Conexion.Port := 3306;
-  Conexion.DatabaseName := 'ProgramacionVisual';
+  Conexion.DatabaseName := 'sacc';
   Conexion.UserName := 'root';
   Conexion.Connected := True;
   Conexion.KeepConnection := True;

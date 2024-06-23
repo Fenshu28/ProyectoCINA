@@ -69,6 +69,7 @@ type
     procedure nRegistros;
     procedure Panel1Click(Sender: TObject);
     procedure Panel3Click(Sender: TObject);
+    procedure Panel4Click(Sender: TObject);
     procedure Panel5Click(Sender: TObject);
   private
 
@@ -299,6 +300,11 @@ procedure TfrmPacientes.Panel3Click(Sender: TObject);
      nRegistros();
    end;
 
+end;
+
+procedure TfrmPacientes.Panel4Click(Sender: TObject);
+begin
+  Close;
 end;
 
 procedure TfrmPacientes.Panel5Click(Sender: TObject);

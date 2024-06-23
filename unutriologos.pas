@@ -6,23 +6,21 @@ interface
 
 uses
   Classes, SysUtils, mysql80conn, SQLDB, DB, Forms, Controls, Graphics, Dialogs,
-  StdCtrls, DBCtrls, ExtCtrls, ComCtrls, PReport, uBuscarNutriologos;
+  StdCtrls, DBCtrls, ExtCtrls, ComCtrls, Buttons, DBExtCtrls, PReport,
+  uBuscarNutriologos;
 
 type
 
   { TfrmNutriologos }
 
   TfrmNutriologos = class(TForm)
-    btnPrimero: TButton;
-    btnAnterior: TButton;
-    btnSiguiente: TButton;
-    btnUltimo: TButton;
-    btnSalir: TButton;
     DataSource1: TDataSource;
+    eDBNombre: TDBMemo;
     eDBGrupo: TDBEdit;
-    eDBEdad: TDBEdit;
-    eDBNombre: TDBEdit;
+    eDBfechaNac: TDBEdit;
     eDBMatricula: TDBEdit;
+    btnNext: TImage;
+    btnFormer: TImage;
     impresora: TPReport;
     Label2: TLabel;
     Label3: TLabel;
@@ -35,6 +33,7 @@ type
     Panel2: TPanel;
     Altas: TPanel;
     Panel3: TPanel;
+    Panel4: TPanel;
     Panel5: TPanel;
 
     PRLabel1: TPRLabel;
@@ -47,37 +46,42 @@ type
     PRRect1: TPRRect;
     Query: TSQLQuery;
     Transacion: TSQLTransaction;
-    procedure btnPrimeroClick(Sender: TObject);
-    procedure btnAnteriorClick(Sender: TObject);
-    procedure btnSiguienteClick(Sender: TObject);
-    procedure btnUltimoClick(Sender: TObject);
+    procedure btnNextClick(Sender: TObject);
     procedure btnSalirClick(Sender: TObject);
     procedure btnAltasClick(Sender: TObject);
     procedure btnEliminarClick(Sender: TObject);
     procedure btnBuscarClick(Sender: TObject);
     procedure btnExportarClick(Sender: TObject);
     procedure eDBMatriculaChange(Sender: TObject);
+    procedure eDBNombreClick(Sender: TObject);
 
 
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
     procedure FormCreate(Sender: TObject);
+    procedure btnFormerClick(Sender: TObject);
+    procedure Label5Click(Sender: TObject);
+    procedure eDBNombreChange(Sender: TObject);
     procedure nRegistros();
     function obNumero():Integer;
     procedure BuscarClick(Sender: TObject);
     procedure AltasClick(Sender: TObject);
     procedure Panel1Click(Sender: TObject);
     procedure Panel3Click(Sender: TObject);
+    procedure Panel4Click(Sender: TObject);
     procedure Panel5Click(Sender: TObject);
+    procedure Panel6Click(Sender: TObject);
+    procedure Panel7Click(Sender: TObject);
+    procedure Panel8Click(Sender: TObject);
 
   private
 
   public
    procedure conectarBD;
-   procedure createColumnMatricula(matricula : string; x, y : integer);
+   procedure createColumnMatricula(matricula, x, y: integer);
    procedure createColumnNombre(nombre : string; x, y : integer);
    procedure createColumnGrupo(grupo, x, y : integer);
-   procedure createColumnEdad(edad, x, y : integer);
+   procedure createColumnfechaNac(fechaNac: TDateTime; x, y: integer);
   end;
 
 var
@@ -108,7 +112,7 @@ procedure TfrmNutriologos.AltasClick(Sender: TObject);
   var
   numReg:Integer;
 begin
-    if Altas.Caption='Nuevo' then
+    if Altas.Caption='Altas' then
     begin
       numReg:=obNumero;
       Query.Open;
@@ -121,7 +125,7 @@ begin
     begin
       Query.Post;
       Query.ApplyUpdates;
-      Altas.Caption:='Nuevo';
+      Altas.Caption:='Altas';
       Query.Refresh;
       nRegistros;
     end;
@@ -164,6 +168,11 @@ begin
   end;
 end;
 
+procedure TfrmNutriologos.Panel4Click(Sender: TObject);
+begin
+ Close;
+end;
+
 procedure TfrmNutriologos.Panel5Click(Sender: TObject);
   var
     relativeY : integer;
@@ -177,10 +186,14 @@ procedure TfrmNutriologos.Panel5Click(Sender: TObject);
     begin
 
       relativeY += 40;
-      createColumnMatricula(Query.FieldByName('Matricula').AsString, 40, relativeY);
+
+      createColumnMatricula(Query.FieldByName('Matricula').AsInteger,40,relativeY);
       createColumnNombre(Query.FieldByName('nombre').AsString, 192, relativeY);
       createColumnGrupo(Query.FieldByName('grupo').AsInteger, 508, relativeY);
-      createColumnEdad(Query.FieldByName('edad').AsInteger, 352, relativeY);
+
+
+      createColumnfechaNac(Query.FieldByName('fechaNac').AsDateTime, 352, relativeY);
+
 
       Query.Next;
     end;
@@ -192,6 +205,24 @@ procedure TfrmNutriologos.Panel5Click(Sender: TObject);
 
     ShowMessage('Reporte de Nutriologos generado!');
 
+end;
+
+procedure TfrmNutriologos.Panel6Click(Sender: TObject);
+begin
+  Query.Prior;
+  nRegistros();
+end;
+
+procedure TfrmNutriologos.Panel7Click(Sender: TObject);
+begin
+  Query.Next;
+  nRegistros();
+end;
+
+procedure TfrmNutriologos.Panel8Click(Sender: TObject);
+begin
+   Query.Last;
+  nRegistros();
 end;
 
 
@@ -213,7 +244,7 @@ begin
 
   Query.DataBase:=Connection;
   Query.UsePrimaryKeyAsKey:=False;
-  Query.SQL.Text:='Select * from Nutris';
+  Query.SQL.Text:='Select * from Nutriologo5';
   DataSource1.DataSet:=Query;
   if Connection.Connected then
   begin
@@ -226,10 +257,27 @@ begin
     eDBNombre.DataSource:=DataSource1;
     eDBGrupo.DataField:='grupo';
     eDBGrupo.DataSource:=DataSource1;
-    eDBEdad.DataField:='edad';
-    eDBEdad.DataSource:=DataSource1;
+    eDBfechaNac.DataField:='fechaNac';
+    eDBfechaNac.DataSource:=DataSource1;
 
     nRegistros;
+      btnNext.Picture.LoadFromFile('imgs\siguiente.png');
+      btnFormer.Picture.LoadFromFile('imgs\anterior.png');
+end;
+
+procedure TfrmNutriologos.btnFormerClick(Sender: TObject);
+begin
+  Query.Prior;
+  nRegistros();
+end;
+
+procedure TfrmNutriologos.Label5Click(Sender: TObject);
+begin
+
+end;
+
+procedure TfrmNutriologos.eDBNombreChange(Sender: TObject);
+begin
 
 end;
 
@@ -250,7 +298,10 @@ begin
   Transacion.Active:=True;
 end;
 
-procedure TfrmNutriologos.createColumnMatricula(matricula: string; x, y: integer);
+
+
+
+procedure TfrmNutriologos.createColumnMatricula(matricula, x, y: integer);
 var
   labelMatricula : TPRLabel;
 begin
@@ -262,7 +313,8 @@ begin
     left := x;
     Top:= y;
 
-    Caption:=matricula;
+
+    Caption:=IntToStr(matricula);
   end;
 end;
 
@@ -299,19 +351,26 @@ begin
 
 end;
 
-procedure TfrmNutriologos.createColumnEdad(edad, x, y: integer);
-var
-  labelEdad : TPRLabel;
-begin
-  labelEdad := TPRLabel.Create(nil);
 
-  with labelEdad do
+
+
+procedure TfrmNutriologos.createColumnfechaNac(fechaNac: TDateTime; x, y: integer);
+
+
+
+var
+  labelfechaNac : TPRLabel;
+begin
+  labelfechaNac := TPRLabel.Create(nil);
+
+  with labelfechaNac do
   begin
     Parent := panelReport;
     left := x;
     Top:= y;
 
-    Caption:=IntToStr(edad);
+    Caption := DateToStr(fechaNac);
+
   end;
 
 end;
@@ -326,6 +385,12 @@ var
 procedure TfrmNutriologos.btnSalirClick(Sender: TObject);
 begin
   Close;
+end;
+
+procedure TfrmNutriologos.btnNextClick(Sender: TObject);
+begin
+  Query.Next;
+  nRegistros();
 end;
 
 procedure TfrmNutriologos.btnAltasClick(Sender: TObject);
@@ -368,10 +433,11 @@ begin
   begin
 
     relativeY += 40;
-    createColumnMatricula(Query.FieldByName('matricula').AsString, 40, relativeY);
+    createColumnMatricula(Query.FieldByName('matricula').AsInteger,40,relativeY);
     createColumnNombre(Query.FieldByName('nombre').AsString, 192, relativeY);
-    createColumnEdad(Query.FieldByName('edad').AsInteger, 352, relativeY);
-    createColumnGrupo(Query.FieldByName('grupo').AsInteger, 508, relativeY);
+    createColumnGrupo(Query.FieldByName('grupo').AsInteger, 352, relativeY);
+    createColumnfechaNac(Query.FieldByName('fechaNac').AsDateTime,508,relativeY);
+
 
     Query.Next;
   end;
@@ -385,6 +451,27 @@ begin
 end;
 
 procedure TfrmNutriologos.eDBMatriculaChange(Sender: TObject);
+
+  var
+  matricula: string;
+  i: Integer;
+begin
+
+  matricula := eDBMatricula.Text;
+
+
+  for i := 1 to Length(matricula) do
+  begin
+    if not (matricula[i] in ['0'..'9']) then
+    begin
+
+      ShowMessage('La matrícula solo puede contener números.');
+      Exit;
+    end;
+  end;
+end;
+
+procedure TfrmNutriologos.eDBNombreClick(Sender: TObject);
 begin
 
 end;
@@ -392,29 +479,6 @@ end;
 
 
 
-procedure TfrmNutriologos.btnPrimeroClick(Sender: TObject);
-begin
-  Query.First;
-  nRegistros();
-end;
-
-procedure TfrmNutriologos.btnAnteriorClick(Sender: TObject);
-begin
-  Query.Prior;
-  nRegistros();
-end;
-
-procedure TfrmNutriologos.btnSiguienteClick(Sender: TObject);
-begin
-  Query.Next;
-  nRegistros();
-end;
-
-procedure TfrmNutriologos.btnUltimoClick(Sender: TObject);
-begin
-  Query.Last;
-  nRegistros();
-end;
 
 
 end.

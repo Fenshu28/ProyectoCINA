@@ -10,8 +10,9 @@ uses
   athreads,
   {$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, uNutriologos,
-uBuscarNutriologos, ulogin, uPacientes, uHome, uNutriologos1, uconsultorios
+  Forms, uNutriologos, uBuscarNutriologos, ulogin, uPacientes,
+  uNutriologos1, uconsultorios, uBuscarpacientes, uBuscarconsultorios,
+uMenuPrincipal
   { you can add units after this };
 
 {$R *.res}
@@ -24,8 +25,10 @@ begin
   Application.CreateForm(TfrmNutriologos, frmNutriologos);
   Application.CreateForm(TfrmBuscarNutriologos, frmBuscarNutriologos);
   Application.CreateForm(TfrmPacientes, frmPacientes);
-  Application.CreateForm(TfrmHome, frmHome);
   Application.CreateForm(TfrmConsultorios, frmConsultorios);
+  Application.CreateForm(TfrmBuscarPacientes, frmBuscarPacientes);
+  Application.CreateForm(TfrmBuscarConsultorios, frmBuscarConsultorios);
+  Application.CreateForm(TfrmMenuPrincipal, frmMenuPrincipal);
   Application.Run;
 end.
 

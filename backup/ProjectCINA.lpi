@@ -93,7 +93,40 @@
         <Filename Value="uconsultorios.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frmConsultorios"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="ubuscarpacientes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmBuscarPacientes"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uBuscarpacientes"/>
+      </Unit>
+      <Unit>
+        <Filename Value="ubuscarconsultorios.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmBuscarConsultorios"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uBuscarconsultorios"/>
+      </Unit>
+      <Unit>
+        <Filename Value="umenuprincipal.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmMenuPrincipal"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uMenuPrincipal"/>
+      </Unit>
+      <Unit>
+        <Filename Value="ucreditos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmCreditos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uCreditos"/>
       </Unit>
     </Units>
   </ProjectOptions>

@@ -8,10 +8,10 @@
       <Unit>
         <Filename Value="ProjectCINA.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="6"/>
-        <TopLine Value="7"/>
-        <CursorPos X="38" Y="22"/>
-        <UsageCount Value="77"/>
+        <EditorIndex Value="8"/>
+        <TopLine Value="3"/>
+        <CursorPos Y="34"/>
+        <UsageCount Value="127"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -21,8 +21,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uNutriologos"/>
-        <TopLine Value="286"/>
-        <CursorPos Y="331"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="444"/>
+        <CursorPos X="7" Y="476"/>
         <ExtraEditorCount Value="1"/>
         <ExtraEditor1>
           <EditorIndex Value="-1"/>
@@ -30,8 +31,9 @@
           <TopLine Value="-1"/>
           <CursorPos X="-1" Y="-1"/>
         </ExtraEditor1>
-        <UsageCount Value="77"/>
+        <UsageCount Value="127"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="ubuscarnutriologos.pas"/>
@@ -40,10 +42,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uBuscarNutriologos"/>
-        <EditorIndex Value="5"/>
-        <TopLine Value="6"/>
-        <CursorPos X="28" Y="43"/>
-        <UsageCount Value="74"/>
+        <EditorIndex Value="7"/>
+        <TopLine Value="25"/>
+        <CursorPos X="11" Y="66"/>
+        <UsageCount Value="124"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -53,10 +55,10 @@
         <ComponentName Value="Login"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="7"/>
-        <TopLine Value="32"/>
-        <CursorPos X="38" Y="49"/>
-        <UsageCount Value="57"/>
+        <EditorIndex Value="10"/>
+        <TopLine Value="24"/>
+        <CursorPos X="3" Y="50"/>
+        <UsageCount Value="107"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -68,9 +70,9 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uPacientes"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="104"/>
-        <CursorPos X="134" Y="107"/>
-        <UsageCount Value="53"/>
+        <TopLine Value="305"/>
+        <CursorPos X="3" Y="307"/>
+        <UsageCount Value="103"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -81,11 +83,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uHome"/>
-        <EditorIndex Value="8"/>
-        <CursorPos X="129" Y="84"/>
-        <UsageCount Value="42"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="74"/>
+        <CursorPos X="88" Y="75"/>
+        <UsageCount Value="92"/>
       </Unit>
       <Unit>
         <Filename Value="unutriologos1.pas"/>
@@ -96,7 +97,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="34"/>
         <CursorPos X="7" Y="19"/>
-        <UsageCount Value="36"/>
+        <UsageCount Value="86"/>
       </Unit>
       <Unit>
         <Filename Value="uconsultorios.pas"/>
@@ -104,10 +105,67 @@
         <ComponentName Value="frmConsultorios"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="11"/>
+        <TopLine Value="124"/>
+        <CursorPos X="104" Y="125"/>
+        <UsageCount Value="71"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="ubuscarpacientes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmBuscarPacientes"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uBuscarpacientes"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="46"/>
+        <CursorPos X="37" Y="62"/>
+        <UsageCount Value="70"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="ubuscarconsultorios.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmBuscarConsultorios"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uBuscarconsultorios"/>
+        <EditorIndex Value="6"/>
+        <TopLine Value="51"/>
+        <CursorPos X="39" Y="79"/>
+        <UsageCount Value="70"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="umenuprincipal.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmMenuPrincipal"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uMenuPrincipal"/>
         <EditorIndex Value="9"/>
-        <TopLine Value="13"/>
-        <CursorPos X="11" Y="7"/>
-        <UsageCount Value="21"/>
+        <TopLine Value="7"/>
+        <CursorPos X="102" Y="14"/>
+        <ComponentState Value="1"/>
+        <UsageCount Value="27"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="ucreditos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmCreditos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uCreditos"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="21"/>
+        <CursorPos X="57" Y="40"/>
+        <UsageCount Value="26"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -116,7 +174,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="1499"/>
         <CursorPos X="10" Y="1614"/>
-        <UsageCount Value="8"/>
+        <UsageCount Value="4"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
       <Unit>
@@ -127,7 +185,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="18"/>
         <CursorPos X="26" Y="46"/>
-        <UsageCount Value="8"/>
+        <UsageCount Value="4"/>
       </Unit>
       <Unit>
         <Filename Value="F:\ProyectoCINA\ulogin.pas"/>
@@ -138,7 +196,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="6"/>
         <CursorPos X="63" Y="23"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="5"/>
       </Unit>
       <Unit>
         <Filename Value="F:\ProyectoCINA\uprincipal.pas"/>
@@ -149,7 +207,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="14"/>
         <CursorPos X="53" Y="62"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="5"/>
       </Unit>
       <Unit>
         <Filename Value="F:\ProyectoCINA\upacientes.pas"/>
@@ -158,120 +216,146 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uPacientes"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="7"/>
       </Unit>
       <Unit>
         <Filename Value="C:\lazarus\lcl\dbctrls.pp"/>
         <UnitName Value="DBCtrls"/>
-        <EditorIndex Value="1"/>
-        <TopLine Value="1613"/>
-        <CursorPos X="41" Y="1645"/>
-        <UsageCount Value="16"/>
-        <Loaded Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="ubuscarpacientes.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="Form2"/>
-        <ResourceBaseClass Value="Form"/>
-        <UnitName Value="uBuscarpacientes"/>
-        <EditorIndex Value="3"/>
-        <UsageCount Value="20"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="ubuscarconsultorios.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="Form3"/>
-        <ResourceBaseClass Value="Form"/>
-        <UnitName Value="uBuscarconsultorios"/>
         <EditorIndex Value="4"/>
-        <UsageCount Value="20"/>
+        <TopLine Value="1613"/>
+        <CursorPos X="7" Y="1645"/>
+        <UsageCount Value="40"/>
         <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\lcl\include\dbedit.inc"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="17"/>
+        <CursorPos Y="65"/>
+        <UsageCount Value="24"/>
+        <Loaded Value="True"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="19">
+    <JumpHistory HistoryIndex="29">
       <Position>
-        <Filename Value="upacientes.pas"/>
-        <Caret Line="309" Column="14" TopLine="307"/>
+        <Filename Value="ulogin.pas"/>
+        <Caret Line="50" Column="3" TopLine="33"/>
       </Position>
       <Position>
-        <Filename Value="uhome.pas"/>
-        <Caret Line="85" Column="3" TopLine="51"/>
-      </Position>
-      <Position>
-        <Filename Value="uhome.pas"/>
-        <Caret Line="88" Column="3" TopLine="54"/>
-      </Position>
-      <Position>
-        <Filename Value="uhome.pas"/>
-        <Caret Line="91" Column="3" TopLine="57"/>
-      </Position>
-      <Position>
-        <Filename Value="uhome.pas"/>
-        <Caret Line="90" Column="3" TopLine="56"/>
-      </Position>
-      <Position>
-        <Filename Value="uhome.pas"/>
-        <Caret Line="89" Column="3" TopLine="55"/>
-      </Position>
-      <Position>
-        <Filename Value="uhome.pas"/>
-        <Caret Line="88" Column="3" TopLine="54"/>
-      </Position>
-      <Position>
-        <Filename Value="uhome.pas"/>
-        <Caret Line="89" Column="3" TopLine="55"/>
-      </Position>
-      <Position>
-        <Filename Value="uhome.pas"/>
-        <Caret Line="75" Column="3" TopLine="56"/>
-      </Position>
-      <Position>
-        <Filename Value="uhome.pas"/>
-        <Caret Line="74" Column="46" TopLine="56"/>
-      </Position>
-      <Position>
-        <Filename Value="uhome.pas"/>
-        <Caret Line="75" Column="46" TopLine="57"/>
-      </Position>
-      <Position>
-        <Filename Value="uhome.pas"/>
-        <Caret Line="76" Column="46" TopLine="58"/>
-      </Position>
-      <Position>
-        <Filename Value="uhome.pas"/>
-        <Caret Line="75" Column="46" TopLine="57"/>
-      </Position>
-      <Position>
-        <Filename Value="unutriologos.pas"/>
-        <Caret Line="103" Column="3"/>
+        <Filename Value="ProjectCINA.lpr"/>
+        <Caret Line="27" Column="43" TopLine="10"/>
       </Position>
       <Position>
         <Filename Value="upacientes.pas"/>
-        <Caret Line="127" Column="26" TopLine="103"/>
+        <Caret Line="317" Column="78" TopLine="286"/>
+      </Position>
+      <Position>
+        <Filename Value="ulogin.pas"/>
+        <Caret Line="50" Column="19" TopLine="33"/>
+      </Position>
+      <Position>
+        <Filename Value="umenuprincipal.pas"/>
+        <Caret Line="58" Column="3" TopLine="38"/>
+      </Position>
+      <Position>
+        <Filename Value="umenuprincipal.pas"/>
+        <Caret Line="75" Column="6" TopLine="52"/>
       </Position>
       <Position>
         <Filename Value="unutriologos.pas"/>
-        <Caret Line="67" Column="44" TopLine="53"/>
+        <Caret Line="161" Column="3" TopLine="161"/>
       </Position>
       <Position>
         <Filename Value="unutriologos.pas"/>
-        <Caret Line="68" Column="43" TopLine="68"/>
+        <Caret Line="162" Column="3" TopLine="162"/>
       </Position>
       <Position>
         <Filename Value="unutriologos.pas"/>
-        <Caret Line="331" TopLine="286"/>
+        <Caret Line="174" Column="3" TopLine="148"/>
       </Position>
       <Position>
-        <Filename Value="uhome.pas"/>
-        <Caret Line="77" Column="39" TopLine="61"/>
+        <Filename Value="unutriologos.pas"/>
+        <Caret Line="175" Column="3" TopLine="152"/>
       </Position>
       <Position>
-        <Filename Value="uhome.pas"/>
-        <Caret Line="76" Column="39" TopLine="60"/>
+        <Filename Value="unutriologos.pas"/>
+        <Caret Line="174" Column="3" TopLine="163"/>
+      </Position>
+      <Position>
+        <Filename Value="unutriologos.pas"/>
+        <Caret Line="175" Column="3" TopLine="164"/>
+      </Position>
+      <Position>
+        <Filename Value="uconsultorios.pas"/>
+        <Caret Line="209" Column="6" TopLine="200"/>
+      </Position>
+      <Position>
+        <Filename Value="upacientes.pas"/>
+        <Caret Line="195" Column="32" TopLine="195"/>
+      </Position>
+      <Position>
+        <Filename Value="unutriologos.pas"/>
+        <Caret Line="215" Column="3" TopLine="210"/>
+      </Position>
+      <Position>
+        <Filename Value="unutriologos.pas"/>
+        <Caret Line="395" Column="3" TopLine="393"/>
+      </Position>
+      <Position>
+        <Filename Value="unutriologos.pas"/>
+        <Caret Line="273" Column="3" TopLine="268"/>
+      </Position>
+      <Position>
+        <Filename Value="umenuprincipal.pas"/>
+        <Caret Line="72" Column="78" TopLine="56"/>
+      </Position>
+      <Position>
+        <Filename Value="ucreditos.pas"/>
+        <Caret Line="27" Column="7" TopLine="24"/>
+      </Position>
+      <Position>
+        <Filename Value="ucreditos.pas"/>
+        <Caret Line="28" Column="7" TopLine="25"/>
+      </Position>
+      <Position>
+        <Filename Value="ucreditos.pas"/>
+        <Caret Line="27" Column="7" TopLine="24"/>
+      </Position>
+      <Position>
+        <Filename Value="ucreditos.pas"/>
+        <Caret Line="29" Column="7" TopLine="25"/>
+      </Position>
+      <Position>
+        <Filename Value="unutriologos.pas"/>
+        <Caret Line="175" Column="8" TopLine="173"/>
+      </Position>
+      <Position>
+        <Filename Value="unutriologos.pas"/>
+        <Caret Line="174" Column="8" TopLine="172"/>
+      </Position>
+      <Position>
+        <Filename Value="uconsultorios.pas"/>
+        <Caret Line="306" Column="70" TopLine="148"/>
+      </Position>
+      <Position>
+        <Filename Value="uconsultorios.pas"/>
+        <Caret Line="164" Column="7" TopLine="133"/>
+      </Position>
+      <Position>
+        <Filename Value="ProjectCINA.lpr"/>
+        <Caret Line="34" TopLine="3"/>
+      </Position>
+      <Position>
+        <Filename Value="unutriologos.pas"/>
+        <Caret Line="444" Column="36" TopLine="438"/>
+      </Position>
+      <Position>
+        <Filename Value="unutriologos.pas"/>
+        <Caret Line="467" Column="90" TopLine="437"/>
+      </Position>
+      <Position>
+        <Filename Value="unutriologos.pas"/>
+        <Caret Line="471" Column="7" TopLine="439"/>
       </Position>
     </JumpHistory>
     <RunParams>
@@ -279,4 +363,15 @@
       <Modes ActiveMode=""/>
     </RunParams>
   </ProjectSession>
+  <Debugging>
+    <BreakPoints>
+      <Item>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="unutriologos.pas"/>
+        <Line Value="112"/>
+      </Item>
+    </BreakPoints>
+  </Debugging>
 </CONFIG>

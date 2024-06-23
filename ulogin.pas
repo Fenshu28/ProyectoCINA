@@ -5,14 +5,13 @@ unit ulogin;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls,uPacientes,uNutriologos,uhome,uNutriologos1;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls,uPacientes,uNutriologos,uMenuPrincipal,uNutriologos1;
 
 type
 
   { TLogin }
 
   TLogin = class(TForm)
-    Button1: TButton;
     eContrasena: TEdit;
     eUsuario: TEdit;
     Image1: TImage;
@@ -20,8 +19,10 @@ type
     Label2: TLabel;
     Label3: TLabel;
     Panel1: TPanel;
-    procedure Button1Click(Sender: TObject);
+    INGRESAR: TPanel;
+
     procedure FormCreate(Sender: TObject);
+    procedure INGRESARClick(Sender: TObject);
   private
 
   public
@@ -37,16 +38,16 @@ implementation
 
 { TLogin }
 
-procedure TLogin.Button1Click(Sender: TObject);
-begin
-   //form1.ShowModal;
-  frmHome.ShowModal;
 
-end;
 
 procedure TLogin.FormCreate(Sender: TObject);
 begin
    Image1.Picture.LoadFromFile('imgs\logouni.png');
+end;
+
+procedure TLogin.INGRESARClick(Sender: TObject);
+begin
+  frmMenuPrincipal.ShowModal;
 end;
 
 

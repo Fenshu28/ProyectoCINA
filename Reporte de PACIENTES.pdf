@@ -11,12 +11,12 @@ endobj
 <<
 /Producer (PowerPdf version 0.9)
 /Author ()
-/CreationDate (D:20240603103811)
+/CreationDate (D:20240621125300)
 /Creator ()
 /Keywords ()
 /Subject ()
 /Title ()
-/ModDate (D:20240603103812)
+/ModDate (D:20240621125300)
 >>
 endobj
 3 0 obj
@@ -44,86 +44,106 @@ endobj
 endobj
 5 0 obj
 <<
-/Length 659
+/Length 855
 /Filter []
 >>
 stream
 /F0 10 Tf
 /F0 28 Tf
-0 0 1 rg
+0 0 0 rg
 BT
-195 647.2 Td
-(REPORTES) Tj
+209 661.2 Td
+(LISTA DE PACIENTES) Tj
 ET
 /F0 13 Tf
-0 0 0.5 rg
+0 0 0 rg
 BT
 73 605.95 Td
 (Nombre) Tj
 ET
-0 0 0.5 rg
+0 0 0 rg
 BT
 193 605.95 Td
-(Apellido) Tj
+(FechaNac) Tj
 ET
-0 0 0.5 rg
+0 0 0 rg
 BT
-327 605.95 Td
-(Email) Tj
+283 605.95 Td
+(Dirección) Tj
 ET
-0 0 0.5 rg
+0 0 0 rg
 BT
 457 605.95 Td
-(Edad) Tj
+(Teléfono) Tj
 ET
 [] 0 d
-43 617 m
-578 617 l
-578 592 l
-43 592 l
-0 0 0.5 RG
+65 621 m
+600 621 l
+600 596 l
+65 596 l
+0 0 0 RG
 0 w
 s
 /F0 12 Tf
 0 0 0 rg
 BT
 73 546.8 Td
-(Arely) Tj
+(Juan Pérez) Tj
 ET
 0 0 0 rg
 BT
-225 546.8 Td
-(02/11/2003) Tj
+193 546.8 Td
+(15/05/1990) Tj
 ET
 0 0 0 rg
 BT
-541 546.8 Td
-(9512571353) Tj
+293 546.8 Td
+(Calle Principal, Ciudad) Tj
 ET
 0 0 0 rg
 BT
-385 546.8 Td
-(La charca) Tj
+458 546.8 Td
+(123456789) Tj
 ET
 0 0 0 rg
 BT
 73 506.8 Td
-(Arely) Tj
+(Erick Balderas) Tj
 ET
 0 0 0 rg
 BT
-225 506.8 Td
-(07/11/2033) Tj
+193 506.8 Td
+(15/05/1991) Tj
 ET
 0 0 0 rg
 BT
-541 506.8 Td
-(937816381) Tj
+293 506.8 Td
+(fdsgdhjgtuy) Tj
 ET
 0 0 0 rg
 BT
-385 506.8 Td
-(Colonia la charca) Tj
+458 506.8 Td
+(764532) Tj
+ET
+0 0 0 rg
+BT
+73 466.8 Td
+(Agustin) Tj
+ET
+0 0 0 rg
+BT
+193 466.8 Td
+(15/05/2021) Tj
+ET
+0 0 0 rg
+BT
+293 466.8 Td
+(Arboleda) Tj
+ET
+0 0 0 rg
+BT
+458 466.8 Td
+(9512571353) Tj
 ET
 
 endstream
@@ -147,7 +167,7 @@ xref
 0000000296 00000 n
 0000000361 00000 n
 0000000550 00000 n
-0000001279 00000 n
+0000001475 00000 n
 trailer
 <<
 /Size 7
@@ -155,5 +175,5 @@ trailer
 /Info 2 0 R
 >>
 startxref
-1425
+1621
 %%EOF

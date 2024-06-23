@@ -1,7 +1,7 @@
 object frmHome: TfrmHome
-  Left = 469
+  Left = 383
   Height = 736
-  Top = 118
+  Top = 245
   Width = 1000
   Caption = 'frmHome'
   ClientHeight = 736
@@ -81,12 +81,12 @@ object frmHome: TfrmHome
     ParentBackground = False
     ParentColor = False
     TabOrder = 2
-    object frmHome: TImage
+    object Agenda: TImage
       Left = 30
       Height = 85
       Top = 39
       Width = 82
-      OnClick = frmHomeClick
+      OnClick = AgendaClick
     end
     object Label4: TLabel
       Left = 40
@@ -114,12 +114,12 @@ object frmHome: TfrmHome
     ParentBackground = False
     ParentColor = False
     TabOrder = 3
-    object frmHome2: TImage
+    object Nutriologos: TImage
       Left = 30
       Height = 85
       Top = 40
       Width = 82
-      OnClick = frmHome2Click
+      OnClick = NutriologosClick
     end
     object Label6: TLabel
       Left = 20
@@ -179,7 +179,7 @@ object frmHome: TfrmHome
       ParentBackground = False
       ParentColor = False
       TabOrder = 0
-      object frmHome5: TImage
+      object Pacientes: TImage
         Left = 30
         Height = 105
         Top = 30
@@ -213,12 +213,12 @@ object frmHome: TfrmHome
     ParentBackground = False
     ParentColor = False
     TabOrder = 5
-    object frmHome4: TImage
+    object Estadisticas: TImage
       Left = 30
       Height = 105
       Top = 30
       Width = 90
-      OnClick = frmHome4Click
+      OnClick = EstadisticasClick
     end
     object Label8: TLabel
       Left = 20
@@ -247,10 +247,10 @@ object frmHome: TfrmHome
     ParentBackground = False
     ParentColor = False
     TabOrder = 6
-    object frmHome6: TImage
+    object Consultorios: TImage
       Left = 30
       Height = 105
-      Top = 30
+      Top = 32
       Width = 90
       OnClick = frmHome3Click
     end

@@ -1,7 +1,7 @@
 object frmHome: TfrmHome
-  Left = 469
+  Left = 383
   Height = 736
-  Top = 118
+  Top = 245
   Width = 1000
   Caption = 'frmHome'
   ClientHeight = 736

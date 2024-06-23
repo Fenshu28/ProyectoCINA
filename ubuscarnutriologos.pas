@@ -44,7 +44,7 @@ var
   i : integer;
 begin
   Conexion.Connected := true;
-  Query.SQL.Text := 'Select * from Nutris where matricula = "' + txtMatricula.Text + '"';
+  Query.SQL.Text := 'Select * from Nutriologo5 where matricula = "' + txtMatricula.Text + '"';
   Query.Open;
   Query.First;
 
@@ -55,7 +55,7 @@ begin
     begin
       add(Query.FieldByName('matricula').AsString);
       add(Query.FieldByName('nombre').AsString);
-      add(Query.FieldByName('edad').AsString);
+      add(Query.FieldByName('fechaNac').AsString);
       add(Query.FieldByName('grupo').AsString);
     end;
     Query.Next;

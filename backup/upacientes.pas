@@ -6,68 +6,76 @@ interface
 
 uses
   Classes, SysUtils, mysql80conn, SQLDB, DB, Forms, Controls, Graphics, Dialogs,
-  StdCtrls, DBCtrls, ExtCtrls, PReport,uBuscarNutriologos;
+  StdCtrls, DBCtrls, ExtCtrls, Menus, PReport,uBuscarpacientes;
 
 type
 
   { TfrmPacientes }
 
   TfrmPacientes = class(TForm)
-    btnAltas: TButton;
-    btnAnterior: TButton;
-    btnBuscar: TButton;
-    btnEliminar: TButton;
-    btnExportar: TButton;
-    btnModificar: TButton;
-    btnPrimero: TButton;
-    btnSalir: TButton;
-    btnSiguiente: TButton;
-    btnUltimo: TButton;
+    Altas: TPanel;
+
+    btnFormer: TImage;
+    btnNext: TImage;
+    Buscar: TPanel;
     Button1: TButton;
     Button2: TButton;
     Connection: TMySQL80Connection;
     DataSource1: TDataSource;
+    eDBDireccion: TDBMemo;
+    eDBNombre: TDBMemo;
     eDBFechaNac: TDBEdit;
-    eDBDireccion: TDBEdit;
     eDBTelefono: TDBEdit;
-    eDBNombre: TDBEdit;
     impresora: TPReport;
     Label2: TLabel;
     Label3: TLabel;
     Label14: TLabel;
     Label5: TLabel;
     lblConectar: TLabel;
+    Panel1: TPanel;
     Panel2: TPanel;
+    Panel3: TPanel;
+    Panel4: TPanel;
+    Panel5: TPanel;
     panelReport: TPRLayoutPanel;
     PRLabel1: TPRLabel;
     PRLabel2: TPRLabel;
     PRLabel3: TPRLabel;
-    PRLabel4: TPRLabel;
-    PRLabel5: TPRLabel;
+    D: TPRLabel;
+    Dir: TPRLabel;
     PRPage1: TPRPage;
     PRRect1: TPRRect;
     Query: TSQLQuery;
     Transacion: TSQLTransaction;
-    procedure btnAltasClick(Sender: TObject);
-    procedure btnBuscarClick(Sender: TObject);
-    procedure btnEliminarClick(Sender: TObject);
+
+    procedure AltasClick(Sender: TObject);
+    procedure btnAnteriorClick(Sender: TObject);
+
+
     procedure btnExportarClick(Sender: TObject);
-    procedure btnModificarClick(Sender: TObject);
+    procedure btnFormerClick(Sender: TObject);
+
+    procedure btnNextClick(Sender: TObject);
     procedure btnSalirClick(Sender: TObject);
+    procedure BuscarClick(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
     procedure FormCreate(Sender: TObject);
     procedure img1Click(Sender: TObject);
+    procedure Label3Click(Sender: TObject);
     function obNumero():Integer;
 
     procedure nRegistros;
+    procedure Panel1Click(Sender: TObject);
+    procedure Panel3Click(Sender: TObject);
+    procedure Panel5Click(Sender: TObject);
   private
 
   public
     procedure ConectarBD;
     procedure createColumnNombre(nombre : string; x, y : integer);
-   procedure createColumnFechaNac(fechaNac : string; x, y : integer);
+   procedure createColumnfechaNac(fechaNac: TDateTime; x, y: integer);
    procedure createColumnTelefono(telefono:  string; x, y : integer);
    procedure createColumnDireccion(direccion : string; x, y : integer);
   end;
@@ -98,47 +106,38 @@ begin
 
 end;
 
-procedure TfrmPacientes.btnAltasClick(Sender: TObject);
+
+
+procedure TfrmPacientes.btnAnteriorClick(Sender: TObject);
+begin
+
+end;
+
+procedure TfrmPacientes.AltasClick(Sender: TObject);
 var
-  numReg:Integer;
+ numReg:Integer;
 begin
-    if btnAltas.Caption='Altas' then
-    begin
-      numReg:=obNumero;
-      Query.Open;
-      Query.Insert;
-      btnAltas.Caption:='Guardar';
-      Exit
+   if Altas.Caption='Altas' then
+   begin
+     numReg:=obNumero;
+     Query.Open;
+     Query.Insert;
+     Altas.Caption:='Guardar';
+     Exit
 
-    end
-    else
-    begin
-      Query.Post;
-      Query.ApplyUpdates;
-      btnAltas.Caption:='Altas';
-      Query.Refresh;
-      nRegistros;
-    end;
+   end
+   else
+   begin
+     Query.Post;
+     Query.ApplyUpdates;
+     Altas.Caption:='Altas';
+     Query.Refresh;
+     nRegistros;
+   end;
 
-    end;
-
-procedure TfrmPacientes.btnBuscarClick(Sender: TObject);
-begin
-  frmBuscarNutriologos.ShowModal;
 end;
 
-procedure TfrmPacientes.btnEliminarClick(Sender: TObject);
-begin
-  if Query.RecordCount>0 then
-  begin
-    Query.Delete;
-    Query.UpdateMode:=upWhereAll;
-    Query.ApplyUpdates;
-    Query.Close;
-    Query.Open;
-    nRegistros();
-  end;
-end;
+
 
 procedure TfrmPacientes.btnExportarClick(Sender: TObject);
  var
@@ -154,14 +153,15 @@ begin
 
     relativeY += 40;
     createColumnNombre(Query.FieldByName('nombre').AsString, 40, relativeY);
-    createColumnFechaNac(Query.FieldByName('fechaNac').AsString, 192, relativeY);
-    createColumnTelefono(Query.FieldByName('telefono').AsString, 508, relativeY);
-    createColumnDireccion(Query.FieldByName('direccion').AsString, 352, relativeY);
+    createColumnfechaNac(Query.FieldByName('fechaNac').AsDateTime, 160, relativeY);
+    createColumnDireccion(Query.FieldByName('direccion').AsString, 260, relativeY);
+    createColumnTelefono(Query.FieldByName('telefono').AsString, 425, relativeY);
+
 
     Query.Next;
   end;
 
-  impresora.FileName:='Reporte de PACIENTES.pdf';
+  impresora.FileName:='Reporte de Pacientes.pdf';
   impresora.BeginDoc;
   impresora.Print(PRPage1);
   impresora.EndDoc;
@@ -170,34 +170,28 @@ begin
 
 end;
 
-procedure TfrmPacientes.btnModificarClick(Sender: TObject);
+procedure TfrmPacientes.btnFormerClick(Sender: TObject);
 begin
-  if btnModificar.Caption = 'Modificar' then
-  begin
-    Query.Open;
-    Query.Edit;
+  Query.Prior;
+  nRegistros();
+end;
 
-    btnModificar.Caption:='Guardar';
-  end
-  else
-  begin
-    Query.Post;
-    Query.UpdateMode:=upWhereAll;
-    Query.ApplyUpdates;
-    btnModificar.Caption:='Modificar';
 
-    Query.Refresh;
-    nRegistros();
 
-    ShowMessage('Registro actualizado');
-
-  end;
-
+procedure TfrmPacientes.btnNextClick(Sender: TObject);
+begin
+  Query.Next;
+  nRegistros();
 end;
 
 procedure TfrmPacientes.btnSalirClick(Sender: TObject);
 begin
   Close;
+end;
+
+procedure TfrmPacientes.BuscarClick(Sender: TObject);
+begin
+  frmBuscarPacientes.ShowModal;
 end;
 
 
@@ -214,7 +208,7 @@ begin
 
   Query.DataBase:=Connection;
   Query.UsePrimaryKeyAsKey:=False;
-  Query.SQL.Text:='Select * from Pacientes';
+  Query.SQL.Text:='Select * from paciente';
   DataSource1.DataSet:=Query;
   if Connection.Connected then
   begin
@@ -231,10 +225,17 @@ begin
     eDBDireccion.DataSource:=DataSource1;
 
     nRegistros;
+    btnNext.Picture.LoadFromFile('imgs\siguiente.png');
+      btnFormer.Picture.LoadFromFile('imgs\anterior.png');
 
 end;
 
 procedure TfrmPacientes.img1Click(Sender: TObject);
+begin
+
+end;
+
+procedure TfrmPacientes.Label3Click(Sender: TObject);
 begin
 
 end;
@@ -261,6 +262,77 @@ var
     i:=Query.RecNo;
   end;
 
+procedure TfrmPacientes.Panel1Click(Sender: TObject);
+ begin
+     if Panel1.Caption = 'Modificar' then
+   begin
+     Query.Open;
+     Query.Edit;
+
+     Panel1.Caption:='Guardar';
+   end
+   else
+   begin
+     Query.Post;
+     Query.UpdateMode:=upWhereAll;
+     Query.ApplyUpdates;
+     Panel1.Caption:='Modificar';
+
+     Query.Refresh;
+     nRegistros();
+
+     ShowMessage('Reporte actualizado');
+
+   end;
+
+end;
+
+procedure TfrmPacientes.Panel3Click(Sender: TObject);
+ begin
+   if Query.RecordCount>0 then
+   begin
+     Query.Delete;
+     Query.UpdateMode:=upWhereAll;
+     Query.ApplyUpdates;
+     Query.Close;
+     Query.Open;
+     nRegistros();
+   end;
+
+end;
+
+procedure TfrmPacientes.Panel5Click(Sender: TObject);
+ var
+   relativeY : integer;
+ begin
+
+
+   relativeY:=120;
+
+   Query.First;
+   while not Query.EOF do
+   begin
+
+     relativeY += 40;
+     createColumnNombre(Query.FieldByName('nombre').AsString, 40, relativeY);
+     createColumnfechaNac(Query.FieldByName('fechaNac').AsDateTime, 160, relativeY);
+     createColumnDireccion(Query.FieldByName('direccion').AsString, 260, relativeY);
+     createColumnTelefono(Query.FieldByName('telefono').AsString, 425, relativeY);
+
+
+     Query.Next;
+   end;
+
+   impresora.FileName:='Reporte de Pacientes.pdf';
+   impresora.BeginDoc;
+   impresora.Print(PRPage1);
+   impresora.EndDoc;
+
+   ShowMessage('Reporte generado!');
+
+
+end;
+
  procedure TfrmPacientes.createColumnNombre(nombre: string; x, y: integer);
 var
   labelNombre : TPRLabel;
@@ -276,7 +348,8 @@ begin
   end;
 end;
 
-procedure TfrmPacientes.createColumnfechaNac(fechaNac: string; x, y: integer);
+
+procedure TfrmPacientes.createColumnfechaNac(fechaNac: TDateTime; x, y: integer);
 var
   labelfechaNac : TPRLabel;
 begin
@@ -288,7 +361,7 @@ begin
     left := x;
     Top:= y;
 
-    Caption:=fechaNac;
+    Caption := DateToStr(fechaNac);
   end;
 end;
 

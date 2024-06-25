@@ -1,7 +1,7 @@
 object frmConsultorios: TfrmConsultorios
-  Left = 463
+  Left = 401
   Height = 789
-  Top = 411
+  Top = 144
   Width = 1006
   Caption = 'frmConsultorios'
   ClientHeight = 789
@@ -292,14 +292,6 @@ object frmConsultorios: TfrmConsultorios
     ParentFont = False
     TabOrder = 10
   end
-  object Connection: TMySQL80Connection
-    Connected = False
-    LoginPrompt = False
-    KeepConnection = False
-    SkipLibraryVersionCheck = False
-    Left = 964
-    Top = 338
-  end
   object Transacion: TSQLTransaction
     Active = False
     Left = 962
@@ -324,5 +316,13 @@ object frmConsultorios: TfrmConsultorios
     ViewerPreference = []
     Left = 962
     Top = 514
+  end
+  object Connection: TMySQL57Connection
+    Connected = False
+    LoginPrompt = False
+    KeepConnection = False
+    SkipLibraryVersionCheck = False
+    Left = 963
+    Top = 345
   end
 end

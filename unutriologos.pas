@@ -5,9 +5,9 @@ unit uNutriologos;
 interface
 
 uses
-  Classes, SysUtils, mysql80conn, SQLDB, DB, Forms, Controls, Graphics, Dialogs,
-  StdCtrls, DBCtrls, ExtCtrls, ComCtrls, Buttons, DBExtCtrls, PReport,
-  uBuscarNutriologos;
+  Classes, SysUtils, mysql80conn, mysql57conn, SQLDB, DB, Forms, Controls,
+  Graphics, Dialogs, StdCtrls, DBCtrls, ExtCtrls, ComCtrls, Buttons, DBExtCtrls,
+  PReport, uBuscarNutriologos, uConstantes;
 
 type
 
@@ -27,8 +27,8 @@ type
     Label4: TLabel;
     Label5: TLabel;
     lblConectar: TLabel;
-    Connection: TMySQL80Connection;
     Buscar: TPanel;
+    Connection: TMySQL57Connection;
     Panel1: TPanel;
     Panel2: TPanel;
     Altas: TPanel;
@@ -57,13 +57,13 @@ type
 
 
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
-    procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+    procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
     procedure FormCreate(Sender: TObject);
     procedure btnFormerClick(Sender: TObject);
     procedure Label5Click(Sender: TObject);
     procedure eDBNombreChange(Sender: TObject);
     procedure nRegistros();
-    function obNumero():Integer;
+    function obNumero(): integer;
     procedure BuscarClick(Sender: TObject);
     procedure AltasClick(Sender: TObject);
     procedure Panel1Click(Sender: TObject);
@@ -77,11 +77,11 @@ type
   private
 
   public
-   procedure conectarBD;
-   procedure createColumnMatricula(matricula, x, y: integer);
-   procedure createColumnNombre(nombre : string; x, y : integer);
-   procedure createColumnGrupo(grupo, x, y : integer);
-   procedure createColumnfechaNac(fechaNac: TDateTime; x, y: integer);
+    procedure conectarBD;
+    procedure createColumnMatricula(matricula, x, y: integer);
+    procedure createColumnNombre(nombre: string; x, y: integer);
+    procedure createColumnGrupo(grupo, x, y: integer);
+    procedure createColumnfechaNac(fechaNac: TDateTime; x, y: integer);
   end;
 
 var
@@ -93,14 +93,14 @@ implementation
 
 { TfrmNutriologos }
 
-function TfrmNutriologos.obNumero():Integer;
+function TfrmNutriologos.obNumero(): integer;
 var
-  numRegActual:Integer;
-  begin
-    Query.Last;
-    numRegActual:=Query.RecNo;
-    Result:=numRegActual;
-  end;
+  numRegActual: integer;
+begin
+  Query.Last;
+  numRegActual := Query.RecNo;
+  Result := numRegActual;
+end;
 
 procedure TfrmNutriologos.BuscarClick(Sender: TObject);
 begin
@@ -108,44 +108,43 @@ begin
 end;
 
 procedure TfrmNutriologos.AltasClick(Sender: TObject);
-
-  var
-  numReg:Integer;
+var
+  numReg: integer;
 begin
-    if Altas.Caption='Altas' then
-    begin
-      numReg:=obNumero;
-      Query.Open;
-      Query.Insert;
-      Altas.Caption:='Guardar';
-      Exit
-
-    end
-    else
-    begin
-      Query.Post;
-      Query.ApplyUpdates;
-      Altas.Caption:='Altas';
-      Query.Refresh;
-      nRegistros;
-    end;
-end;
-
-procedure TfrmNutriologos.Panel1Click(Sender: TObject);
-begin
-    if Panel1.Caption = 'Modificar' then
+  if Altas.Caption = 'Altas' then
   begin
+    numReg := obNumero;
     Query.Open;
-    Query.Edit;
+    Query.Insert;
+    Altas.Caption := 'Guardar';
+    Exit;
 
-    Panel1.Caption:='Guardar';
   end
   else
   begin
     Query.Post;
-    Query.UpdateMode:=upWhereAll;
     Query.ApplyUpdates;
-    Panel1.Caption:='Modificar';
+    Altas.Caption := 'Altas';
+    Query.Refresh;
+    nRegistros;
+  end;
+end;
+
+procedure TfrmNutriologos.Panel1Click(Sender: TObject);
+begin
+  if Panel1.Caption = 'Modificar' then
+  begin
+    Query.Open;
+    Query.Edit;
+
+    Panel1.Caption := 'Guardar';
+  end
+  else
+  begin
+    Query.Post;
+    Query.UpdateMode := upWhereAll;
+    Query.ApplyUpdates;
+    Panel1.Caption := 'Modificar';
 
     Query.Refresh;
     nRegistros();
@@ -157,10 +156,10 @@ end;
 
 procedure TfrmNutriologos.Panel3Click(Sender: TObject);
 begin
-  if Query.RecordCount>0 then
+  if Query.RecordCount > 0 then
   begin
     Query.Delete;
-    Query.UpdateMode:=upWhereAll;
+    Query.UpdateMode := upWhereAll;
     Query.ApplyUpdates;
     Query.Close;
     Query.Open;
@@ -170,40 +169,39 @@ end;
 
 procedure TfrmNutriologos.Panel4Click(Sender: TObject);
 begin
- Close;
+  Close;
 end;
 
 procedure TfrmNutriologos.Panel5Click(Sender: TObject);
-  var
-    relativeY : integer;
+var
+  relativeY: integer;
+begin
+
+  relativeY := 120;
+
+  Query.First;
+  while not Query.EOF do
   begin
 
+    relativeY += 40;
 
-    relativeY:=120;
-
-    Query.First;
-    while not Query.EOF do
-    begin
-
-      relativeY += 40;
-
-      createColumnMatricula(Query.FieldByName('Matricula').AsInteger,40,relativeY);
-      createColumnNombre(Query.FieldByName('nombre').AsString, 192, relativeY);
-      createColumnGrupo(Query.FieldByName('grupo').AsInteger, 508, relativeY);
+    createColumnMatricula(Query.FieldByName('Matricula').AsInteger, 40, relativeY);
+    createColumnNombre(Query.FieldByName('nombre').AsString, 192, relativeY);
+    createColumnGrupo(Query.FieldByName('grupo').AsInteger, 508, relativeY);
 
 
-      createColumnfechaNac(Query.FieldByName('fechaNac').AsDateTime, 352, relativeY);
+    createColumnfechaNac(Query.FieldByName('fechaNac').AsDateTime, 352, relativeY);
 
 
-      Query.Next;
-    end;
+    Query.Next;
+  end;
 
-    impresora.FileName:='Reporte de Nutriologos.pdf';
-    impresora.BeginDoc;
-    impresora.Print(PRPage1);
-    impresora.EndDoc;
+  impresora.FileName := 'Reporte de Nutriologos.pdf';
+  impresora.BeginDoc;
+  impresora.Print(PRPage1);
+  impresora.EndDoc;
 
-    ShowMessage('Reporte de Nutriologos generado!');
+  ShowMessage('Reporte de Nutriologos generado!');
 
 end;
 
@@ -221,7 +219,7 @@ end;
 
 procedure TfrmNutriologos.Panel8Click(Sender: TObject);
 begin
-   Query.Last;
+  Query.Last;
   nRegistros();
 end;
 
@@ -229,40 +227,40 @@ end;
 
 procedure TfrmNutriologos.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 begin
-   Connection.Close();
+  Connection.Close();
 end;
 
-procedure TfrmNutriologos.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+procedure TfrmNutriologos.FormCloseQuery(Sender: TObject; var CanClose: boolean);
 begin
-    Query.Close;
-    CanClose:=True;
+  Query.Close;
+  CanClose := True;
 end;
 
 procedure TfrmNutriologos.FormCreate(Sender: TObject);
 begin
   conectarBD;
 
-  Query.DataBase:=Connection;
-  Query.UsePrimaryKeyAsKey:=False;
-  Query.SQL.Text:='Select * from nutriologo';
-  DataSource1.DataSet:=Query;
+  Query.DataBase := Connection;
+  Query.UsePrimaryKeyAsKey := False;
+  Query.SQL.Text := 'Select * from nutriologo';
+  DataSource1.DataSet := Query;
   if Connection.Connected then
   begin
-    lblConectar.Caption:='Conectada';
+    lblConectar.Caption := 'Conectada';
   end;
-    Query.Open;
-    eDBMatricula.DataField:='matricula';
-    eDBMatricula.DataSource:=DataSource1;
-    eDBNombre.DataField:='nombre';
-    eDBNombre.DataSource:=DataSource1;
-    eDBGrupo.DataField:='grupo';
-    eDBGrupo.DataSource:=DataSource1;
-    eDBfechaNac.DataField:='fechaNac';
-    eDBfechaNac.DataSource:=DataSource1;
+  Query.Open;
+  eDBMatricula.DataField := 'matricula';
+  eDBMatricula.DataSource := DataSource1;
+  eDBNombre.DataField := 'nombre';
+  eDBNombre.DataSource := DataSource1;
+  eDBGrupo.DataField := 'grupo';
+  eDBGrupo.DataSource := DataSource1;
+  eDBfechaNac.DataField := 'fechaNac';
+  eDBfechaNac.DataSource := DataSource1;
 
-    nRegistros;
-      btnNext.Picture.LoadFromFile('imgs\siguiente.png');
-      btnFormer.Picture.LoadFromFile('imgs\anterior.png');
+  nRegistros;
+  btnNext.Picture.LoadFromFile('imgs\siguiente.png');
+  btnFormer.Picture.LoadFromFile('imgs\anterior.png');
 end;
 
 procedure TfrmNutriologos.btnFormerClick(Sender: TObject);
@@ -285,17 +283,26 @@ end;
 
 procedure TfrmNutriologos.conectarBD;
 begin
-  Connection.HostName:='localhost';
-  Connection.Password:='root';
-  Connection.Port:=3306;
-  Connection.DatabaseName:='sacc';
-  Connection.UserName:='root';
-  Connection.Connected:=True;
-  Connection.KeepConnection:=True;
+  try
+    Connection.HostName := BD_Host;
+    Connection.Password := BD_Passw;
+    Connection.Port := BD_Port;
+    Connection.DatabaseName := BD_Name;
+    Connection.UserName := BD_User;
+    Connection.Connected := True;
+    Connection.KeepConnection := True;
 
-  Transacion.DataBase:=Connection;
-  Transacion.Action:=caCommit;
-  Transacion.Active:=True;
+    Transacion.DataBase := Connection;
+    Transacion.Action := caCommit;
+    Transacion.Active := True;
+
+  except
+    on E: Exception do
+    begin
+      ShowMessage(E.Message);
+    end;
+  end;
+
 end;
 
 
@@ -303,7 +310,7 @@ end;
 
 procedure TfrmNutriologos.createColumnMatricula(matricula, x, y: integer);
 var
-  labelMatricula : TPRLabel;
+  labelMatricula: TPRLabel;
 begin
   labelMatricula := TPRLabel.Create(nil);
 
@@ -311,16 +318,16 @@ begin
   begin
     Parent := panelReport;
     left := x;
-    Top:= y;
+    Top := y;
 
 
-    Caption:=IntToStr(matricula);
+    Caption := IntToStr(matricula);
   end;
 end;
 
 procedure TfrmNutriologos.createColumnNombre(nombre: string; x, y: integer);
 var
-  labelNombre : TPRLabel;
+  labelNombre: TPRLabel;
 begin
   labelNombre := TPRLabel.Create(nil);
 
@@ -328,15 +335,15 @@ begin
   begin
     Parent := panelReport;
     left := x;
-    Top:= y;
+    Top := y;
 
-    Caption:=nombre;
+    Caption := nombre;
   end;
 end;
 
-procedure TfrmNutriologos.createColumnGrupo(grupo,x, y: integer);
+procedure TfrmNutriologos.createColumnGrupo(grupo, x, y: integer);
 var
-  labelGrupo : TPRLabel;
+  labelGrupo: TPRLabel;
 begin
   labelGrupo := TPRLabel.Create(nil);
 
@@ -344,9 +351,9 @@ begin
   begin
     Parent := panelReport;
     left := x;
-    Top:= y;
+    Top := y;
 
-    Caption:=IntToStr(grupo);
+    Caption := IntToStr(grupo);
   end;
 
 end;
@@ -355,11 +362,8 @@ end;
 
 
 procedure TfrmNutriologos.createColumnfechaNac(fechaNac: TDateTime; x, y: integer);
-
-
-
 var
-  labelfechaNac : TPRLabel;
+  labelfechaNac: TPRLabel;
 begin
   labelfechaNac := TPRLabel.Create(nil);
 
@@ -367,7 +371,7 @@ begin
   begin
     Parent := panelReport;
     left := x;
-    Top:= y;
+    Top := y;
 
     Caption := DateToStr(fechaNac);
 
@@ -377,10 +381,10 @@ end;
 
 procedure TfrmNutriologos.nRegistros();
 var
-  i:Integer;
-  begin
-    i:=Query.RecNo;
-  end;
+  i: integer;
+begin
+  i := Query.RecNo;
+end;
 
 procedure TfrmNutriologos.btnSalirClick(Sender: TObject);
 begin
@@ -402,10 +406,10 @@ end;
 
 procedure TfrmNutriologos.btnEliminarClick(Sender: TObject);
 begin
-  if Query.RecordCount>0 then
+  if Query.RecordCount > 0 then
   begin
     Query.Delete;
-    Query.UpdateMode:=upWhereAll;
+    Query.UpdateMode := upWhereAll;
     Query.ApplyUpdates;
     Query.Close;
     Query.Open;
@@ -422,27 +426,26 @@ end;
 
 procedure TfrmNutriologos.btnExportarClick(Sender: TObject);
 var
-  relativeY : integer;
+  relativeY: integer;
 begin
 
-
-  relativeY:=120;
+  relativeY := 120;
 
   Query.First;
   while not Query.EOF do
   begin
 
     relativeY += 40;
-    createColumnMatricula(Query.FieldByName('matricula').AsInteger,40,relativeY);
+    createColumnMatricula(Query.FieldByName('matricula').AsInteger, 40, relativeY);
     createColumnNombre(Query.FieldByName('nombre').AsString, 192, relativeY);
     createColumnGrupo(Query.FieldByName('grupo').AsInteger, 352, relativeY);
-    createColumnfechaNac(Query.FieldByName('fechaNac').AsDateTime,508,relativeY);
+    createColumnfechaNac(Query.FieldByName('fechaNac').AsDateTime, 508, relativeY);
 
 
     Query.Next;
   end;
 
-  impresora.FileName:='Reporte de presonas.pdf';
+  impresora.FileName := 'Reporte de presonas.pdf';
   impresora.BeginDoc;
   impresora.Print(PRPage1);
   impresora.EndDoc;
@@ -451,10 +454,9 @@ begin
 end;
 
 procedure TfrmNutriologos.eDBMatriculaChange(Sender: TObject);
-
-  var
+var
   matricula: string;
-  i: Integer;
+  i: integer;
 begin
 
   matricula := eDBMatricula.Text;
@@ -479,7 +481,4 @@ end;
 
 
 
-
-
 end.
-

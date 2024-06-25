@@ -337,14 +337,6 @@ object frmNutriologos: TfrmNutriologos
     TabOrder = 11
     OnClick = Panel4Click
   end
-  object Connection: TMySQL80Connection
-    Connected = False
-    LoginPrompt = False
-    KeepConnection = False
-    SkipLibraryVersionCheck = False
-    Left = 920
-    Top = 430
-  end
   object Transacion: TSQLTransaction
     Active = False
     Left = 920
@@ -369,5 +361,13 @@ object frmNutriologos: TfrmNutriologos
     ViewerPreference = []
     Left = 920
     Top = 610
+  end
+  object Connection: TMySQL57Connection
+    Connected = False
+    LoginPrompt = False
+    KeepConnection = False
+    SkipLibraryVersionCheck = False
+    Left = 914
+    Top = 446
   end
 end

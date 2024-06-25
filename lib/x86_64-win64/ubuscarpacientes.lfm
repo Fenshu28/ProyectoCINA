@@ -116,17 +116,17 @@ object frmBuscarPacientes: TfrmBuscarPacientes
     Left = 154
     Top = 445
   end
-  object Conexion: TMySQL80Connection
-    Connected = False
-    LoginPrompt = False
-    KeepConnection = False
-    SkipLibraryVersionCheck = False
-    Left = 394
-    Top = 445
-  end
   object DataSource: TDataSource
     DataSet = Query
     Left = 647
     Top = 445
+  end
+  object Conexion: TMySQL57Connection
+    Connected = False
+    LoginPrompt = False
+    KeepConnection = False
+    SkipLibraryVersionCheck = False
+    Left = 424
+    Top = 472
   end
 end

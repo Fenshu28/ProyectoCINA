@@ -5,8 +5,8 @@ unit uBuscarNutriologos;
 interface
 
 uses
-  Classes, SysUtils, SQLDB, DB, mysql80conn, Forms, Controls, Graphics, Dialogs,
-  StdCtrls, ComCtrls;
+  Classes, SysUtils, SQLDB, DB, mysql80conn, mysql57conn, Forms, Controls,
+  Graphics, Dialogs, StdCtrls, ComCtrls, uConstantes;
 
 type
 
@@ -14,8 +14,8 @@ type
 
   TfrmBuscarNutriologos = class(TForm)
     buttonSearch: TButton;
-    Conexion: TMySQL80Connection;
     DataSource: TDataSource;
+    Conexion: TMySQL57Connection;
     txtMatricula: TEdit;
     Label1: TLabel;
     lst: TListView;
@@ -44,7 +44,7 @@ var
   i : integer;
 begin
   Conexion.Connected := true;
-  Query.SQL.Text := 'Select * from Nutriologo5 where matricula = "' + txtMatricula.Text + '"';
+  Query.SQL.Text := 'Select * from nutriologo where matricula = "' + txtMatricula.Text + '"';
   Query.Open;
   Query.First;
 
@@ -64,11 +64,11 @@ end;
 
 procedure TfrmBuscarNutriologos.FormCreate(Sender: TObject);
 begin     
-  Conexion.HostName:='localhost';
-  Conexion.Password := 'root';
-  Conexion.Port := 3306;
-  Conexion.DatabaseName := 'ProgramacionVisual';
-  Conexion.UserName := 'root';
+  Conexion.HostName := BD_Host;
+  Conexion.Password := BD_Passw;
+  Conexion.Port := BD_Port;
+  Conexion.DatabaseName := BD_Name;
+  Conexion.UserName := BD_Name;
   Conexion.Connected := True;
   Conexion.KeepConnection := True;
 

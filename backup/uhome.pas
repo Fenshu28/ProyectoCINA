@@ -9,15 +9,15 @@ uses
 
 type
 
-  { TfrmInicio }
+  { TfrmHome }
 
-  TfrmInicio = class(TForm)
-    Agenda: TImage;
-    Nutriologos: TImage;
+  TfrmHome = class(TForm)
+    frmHome: TImage;
+    frmHome2: TImage;
     frmHome3: TImage;
-    Estadisticas: TImage;
-    Pacientes: TImage;
-    Consultorios: TImage;
+    frmHome4: TImage;
+    frmHome5: TImage;
+    frmHome6: TImage;
     Label1: TLabel;
     Label10: TLabel;
     Label2: TLabel;
@@ -37,10 +37,10 @@ type
     Panel8: TPanel;
     Panel9: TPanel;
     procedure FormCreate(Sender: TObject);
-    procedure NutriologosClick(Sender: TObject);
+    procedure frmHome2Click(Sender: TObject);
     procedure frmHome3Click(Sender: TObject);
-    procedure EstadisticasClick(Sender: TObject);
-    procedure AgendaClick(Sender: TObject);
+    procedure frmHome4Click(Sender: TObject);
+    procedure frmHomeClick(Sender: TObject);
     procedure Label1Click(Sender: TObject);
     procedure Label3Click(Sender: TObject);
   private
@@ -50,31 +50,30 @@ type
   end;
 
 var
-  Agenda: TfrmInicio;
+  frmHome: TfrmHome;
 
 implementation
 
 {$R *.lfm}
 
-{ TfrmInicio }
+{ TfrmHome }
 
-procedure TfrmInicio.Label3Click(Sender: TObject);
+procedure TfrmHome.Label3Click(Sender: TObject);
 begin
 
 end;
 
-procedure TfrmInicio.Label1Click(Sender: TObject);
+procedure TfrmHome.Label1Click(Sender: TObject);
 begin
 
 end;
 
-procedure TfrmInicio.FormCreate(Sender: TObject);
+procedure TfrmHome.FormCreate(Sender: TObject);
 begin
-  Agenda.Picture.LoadFromFile('imgs\agendaIMG.png');
-  Nutriologos.Picture.LoadFromFile('imgs\enfermeraIMG.png');
-  Estadisticas.Picture.LoadFromFile('imgs\estadisticasIMG.png');
-  Pacientes.Picture.LoadFromFile('imgs\pacientesIMG.png');
-  Consultorios.Picture.LoadFromFile('imgs\hospitalIMG.png');
+  frmHome.Picture.LoadFromFile('imgs\agendaIMG.png');
+  frmHome2.Picture.LoadFromFile('imgs\enfermeraIMG.png');
+  frmHome4.Picture.LoadFromFile('imgs\estadisticasIMG.png');
+  frmHome5.Picture.LoadFromFile('imgs\pacientesIMG.png');
 
 
 
@@ -83,24 +82,24 @@ begin
 
 end;
 
-procedure TfrmInicio.NutriologosClick(Sender: TObject);
+procedure TfrmHome.frmHome2Click(Sender: TObject);
 begin
   frmNutriologos.ShowModal;
 end;
 
-procedure TfrmInicio.frmHome3Click(Sender: TObject);
+procedure TfrmHome.frmHome3Click(Sender: TObject);
+begin
+  frmConsultorios.ShowModal;
+end;
+
+procedure TfrmHome.frmHome4Click(Sender: TObject);
+begin
+
+end;
+
+procedure TfrmHome.frmHomeClick(Sender: TObject);
 begin
   frmPacientes.ShowModal;
-end;
-
-procedure TfrmInicio.EstadisticasClick(Sender: TObject);
-begin
-
-end;
-
-procedure TfrmInicio.AgendaClick(Sender: TObject);
-begin
-
 end;
 
 end.

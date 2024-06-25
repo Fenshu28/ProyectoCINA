@@ -8,6 +8,7 @@ object Login: TLogin
   ClientWidth = 628
   DesignTimePPI = 120
   OnCreate = FormCreate
+  Position = poDesktopCenter
   LCLVersion = '3.2.0.0'
   object Image1: TImage
     Left = 20
@@ -92,7 +93,7 @@ object Login: TLogin
     Left = 80
     Height = 35
     Top = 40
-    Width = 475
+    Width = 485
     Caption = 'BIENVENIDO A LA AGENDA CINA'
     Font.CharSet = ANSI_CHARSET
     Font.Height = -30

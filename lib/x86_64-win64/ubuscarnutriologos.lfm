@@ -1,7 +1,7 @@
 object frmBuscarNutriologos: TfrmBuscarNutriologos
-  Left = 581
+  Left = 814
   Height = 594
-  Top = 387
+  Top = 169
   Width = 770
   Caption = 'Buscar'
   ClientHeight = 594
@@ -109,17 +109,17 @@ object frmBuscarNutriologos: TfrmBuscarNutriologos
     Left = 120
     Top = 491
   end
-  object Conexion: TMySQL80Connection
-    Connected = False
-    LoginPrompt = False
-    KeepConnection = False
-    SkipLibraryVersionCheck = False
-    Left = 360
-    Top = 491
-  end
   object DataSource: TDataSource
     DataSet = Query
     Left = 613
     Top = 480
+  end
+  object Conexion: TMySQL57Connection
+    Connected = False
+    LoginPrompt = False
+    KeepConnection = False
+    SkipLibraryVersionCheck = False
+    Left = 378
+    Top = 518
   end
 end

@@ -112,17 +112,17 @@ object frmBuscarConsultorios: TfrmBuscarConsultorios
     Left = 154
     Top = 525
   end
-  object Conexion: TMySQL80Connection
-    Connected = False
-    LoginPrompt = False
-    KeepConnection = False
-    SkipLibraryVersionCheck = False
-    Left = 394
-    Top = 525
-  end
   object DataSource: TDataSource
     DataSet = Query
     Left = 647
     Top = 514
+  end
+  object Conexion: TMySQL57Connection
+    Connected = False
+    LoginPrompt = False
+    KeepConnection = False
+    SkipLibraryVersionCheck = False
+    Left = 306
+    Top = 529
   end
 end

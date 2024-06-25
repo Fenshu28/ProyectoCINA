@@ -5,8 +5,9 @@ unit uPacientes;
 interface
 
 uses
-  Classes, SysUtils, mysql80conn, SQLDB, DB, Forms, Controls, Graphics, Dialogs,
-  StdCtrls, DBCtrls, ExtCtrls, Menus, PReport,uBuscarpacientes;
+  Classes, SysUtils, mysql80conn, mysql57conn, SQLDB, DB, Forms, Controls,
+  Graphics, Dialogs, StdCtrls, DBCtrls, ExtCtrls, Menus, PReport,
+  uBuscarpacientes, uConstantes;
 
 type
 
@@ -20,7 +21,6 @@ type
     Buscar: TPanel;
     Button1: TButton;
     Button2: TButton;
-    Connection: TMySQL80Connection;
     DataSource1: TDataSource;
     eDBDireccion: TDBMemo;
     eDBNombre: TDBMemo;
@@ -32,6 +32,7 @@ type
     Label14: TLabel;
     Label5: TLabel;
     lblConectar: TLabel;
+    Connection: TMySQL57Connection;
     Panel1: TPanel;
     Panel2: TPanel;
     Panel3: TPanel;
@@ -243,11 +244,11 @@ end;
 
  procedure TfrmPacientes.conectarBD;
 begin
-  Connection.HostName:='localhost';
-  Connection.Password:='root';
-  Connection.Port:=3306;
-  Connection.DatabaseName:='ProgramacionVisual';
-  Connection.UserName:='root';
+  Connection.HostName := BD_Host;
+  Connection.Password := BD_Passw;
+  Connection.Port := BD_Port;
+  Connection.DatabaseName := BD_Name;
+  Connection.UserName := BD_Name;
   Connection.Connected:=True;
   Connection.KeepConnection:=True;
 

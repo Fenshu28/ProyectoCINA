@@ -1,7 +1,7 @@
 object Login: TLogin
-  Left = 602
+  Left = 656
   Height = 448
-  Top = 517
+  Top = 318
   Width = 628
   Caption = 'Login'
   ClientHeight = 448
@@ -93,7 +93,7 @@ object Login: TLogin
     Left = 80
     Height = 35
     Top = 40
-    Width = 475
+    Width = 485
     Caption = 'BIENVENIDO A LA AGENDA CINA'
     Font.CharSet = ANSI_CHARSET
     Font.Height = -30

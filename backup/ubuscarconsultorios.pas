@@ -5,18 +5,18 @@ unit uBuscarconsultorios;
 interface
 
 uses
-  Classes, SysUtils, SQLDB, DB, mysql80conn, Forms, Controls, Graphics, Dialogs,
-  StdCtrls, ComCtrls, ExtCtrls;
+  Classes, SysUtils, SQLDB, DB, mysql80conn, mysql57conn, Forms, Controls,
+  Graphics, Dialogs, StdCtrls, ComCtrls, ExtCtrls, uConstantes;
 
 type
 
   { TfrmBuscarConsultorios }
 
   TfrmBuscarConsultorios = class(TForm)
-    Conexion: TMySQL80Connection;
     DataSource: TDataSource;
     Label1: TLabel;
     lst: TListView;
+    Conexion: TMySQL57Connection;
     Panel1: TPanel;
     Query: TSQLQuery;
     Transacion: TSQLTransaction;
@@ -63,11 +63,11 @@ end;
 
 procedure TfrmBuscarConsultorios.FormCreate(Sender: TObject);
 begin
-   Conexion.HostName:='localhost';
-  Conexion.Password := 'root';
-  Conexion.Port := 3306;
-  Conexion.DatabaseName := 'ProgramacionVisual';
-  Conexion.UserName := 'root';
+  Conexion.HostName := BD_Host;
+  Conexion.Password := BD_Passw;
+  Conexion.Port := BD_Port;
+  Conexion.DatabaseName := BD_Name;
+  Conexion.UserName := BD_Name;
   Conexion.Connected := True;
   Conexion.KeepConnection := True;
 

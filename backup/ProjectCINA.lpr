@@ -11,8 +11,8 @@ uses
   {$ENDIF}
   Interfaces, // this includes the LCL widgetset
   Forms, uNutriologos, uBuscarNutriologos, ulogin, uPacientes,
-  uNutriologos1, uconsultorios, uBuscarpacientes, uBuscarconsultorios,
-uMenuPrincipal
+  uconsultorios, uBuscarpacientes, uBuscarconsultorios,
+uMenuPrincipal, uCreditos, uAgenda, uConstantes
   { you can add units after this };
 
 {$R *.res}
@@ -29,6 +29,7 @@ begin
   Application.CreateForm(TfrmBuscarPacientes, frmBuscarPacientes);
   Application.CreateForm(TfrmBuscarConsultorios, frmBuscarConsultorios);
   Application.CreateForm(TfrmMenuPrincipal, frmMenuPrincipal);
+  Application.CreateForm(TfrmCreditos, frmCreditos);
   Application.Run;
 end.
 

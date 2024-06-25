@@ -1,7 +1,7 @@
 object frmHome: TfrmHome
-  Left = 383
+  Left = 889
   Height = 736
-  Top = 245
+  Top = 226
   Width = 1000
   Caption = 'frmHome'
   ClientHeight = 736
@@ -92,7 +92,7 @@ object frmHome: TfrmHome
       Left = 40
       Height = 19
       Top = 130
-      Width = 69
+      Width = 67
       Caption = 'AGENDA'
       Font.CharSet = ANSI_CHARSET
       Font.Height = -16
@@ -125,7 +125,7 @@ object frmHome: TfrmHome
       Left = 20
       Height = 19
       Top = 130
-      Width = 119
+      Width = 115
       Caption = 'NUTRIOLOGOS'
       Font.CharSet = ANSI_CHARSET
       Font.Height = -16
@@ -158,7 +158,7 @@ object frmHome: TfrmHome
       Left = 30
       Height = 19
       Top = 130
-      Width = 92
+      Width = 90
       Caption = 'PACIENTES'
       Font.CharSet = ANSI_CHARSET
       Font.Height = -16
@@ -190,7 +190,7 @@ object frmHome: TfrmHome
         Left = 30
         Height = 19
         Top = 130
-        Width = 92
+        Width = 90
         Caption = 'PACIENTES'
         Font.CharSet = ANSI_CHARSET
         Font.Height = -16
@@ -258,7 +258,7 @@ object frmHome: TfrmHome
       Left = 10
       Height = 19
       Top = 130
-      Width = 129
+      Width = 124
       Caption = 'CONSULTORIOS'
       Font.CharSet = ANSI_CHARSET
       Font.Height = -16

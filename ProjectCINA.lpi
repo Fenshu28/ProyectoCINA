@@ -75,21 +75,6 @@
         <UnitName Value="uPacientes"/>
       </Unit>
       <Unit>
-        <Filename Value="uhome.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="frmHome"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="Form"/>
-        <UnitName Value="uHome"/>
-      </Unit>
-      <Unit>
-        <Filename Value="unutriologos1.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="Form1"/>
-        <ResourceBaseClass Value="Form"/>
-        <UnitName Value="uNutriologos1"/>
-      </Unit>
-      <Unit>
         <Filename Value="uconsultorios.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frmConsultorios"/>
@@ -127,6 +112,18 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uCreditos"/>
+      </Unit>
+      <Unit>
+        <Filename Value="uAgenda.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmAgenda"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="uconstantes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uConstantes"/>
       </Unit>
     </Units>
   </ProjectOptions>

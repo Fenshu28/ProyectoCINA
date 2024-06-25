@@ -5,8 +5,9 @@ unit uconsultorios;
 interface
 
 uses
-   Classes, SysUtils, mysql80conn, SQLDB, DB, Forms, Controls, Graphics, Dialogs,
-  StdCtrls, DBCtrls, ExtCtrls, Menus, PReport,uBuscarconsultorios;
+   Classes, SysUtils, mysql80conn, mysql57conn, SQLDB, DB, Forms, Controls,
+   Graphics, Dialogs, StdCtrls, DBCtrls, ExtCtrls, Menus, PReport,
+   uBuscarconsultorios, uConstantes;
 
 type
 
@@ -18,7 +19,6 @@ type
     btnNext: TImage;
     Buscar: TPanel;
     Button2: TButton;
-    Connection: TMySQL80Connection;
     D: TPRLabel;
     DataSource1: TDataSource;
     eDBNota: TDBMemo;
@@ -29,6 +29,7 @@ type
     Label2: TLabel;
     Label3: TLabel;
     lblConectar: TLabel;
+    Connection: TMySQL57Connection;
     Panel1: TPanel;
     Panel2: TPanel;
     Panel3: TPanel;
@@ -268,11 +269,11 @@ end;
 
 procedure TfrmConsultorios.ConectarBD;
 begin
-  Connection.HostName:='localhost';
-  Connection.Password:='root';
-  Connection.Port:=3306;
-  Connection.DatabaseName:='sacc';
-  Connection.UserName:='root';
+  Connection.HostName := BD_Host;
+  Connection.Password := BD_Passw;
+  Connection.Port := BD_Port;
+  Connection.DatabaseName := BD_Name;
+  Connection.UserName := BD_User;
   Connection.Connected:=True;
   Connection.KeepConnection:=True;
 

@@ -1,7 +1,7 @@
 object frmPacientes: TfrmPacientes
-  Left = 502
+  Left = 524
   Height = 875
-  Top = 135
+  Top = 58
   Width = 994
   Caption = 'frmPacientes'
   ClientHeight = 875
@@ -334,14 +334,6 @@ object frmPacientes: TfrmPacientes
     TabOrder = 12
     OnClick = Panel4Click
   end
-  object Connection: TMySQL80Connection
-    Connected = False
-    LoginPrompt = False
-    KeepConnection = False
-    SkipLibraryVersionCheck = False
-    Left = 930
-    Top = 304
-  end
   object Transacion: TSQLTransaction
     Active = False
     Left = 928
@@ -366,5 +358,13 @@ object frmPacientes: TfrmPacientes
     ViewerPreference = []
     Left = 928
     Top = 480
+  end
+  object Connection: TMySQL57Connection
+    Connected = False
+    LoginPrompt = False
+    KeepConnection = False
+    SkipLibraryVersionCheck = False
+    Left = 928
+    Top = 326
   end
 end
